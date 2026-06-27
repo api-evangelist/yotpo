@@ -1,0 +1,76 @@
+aid: yotpo
+name: Yotpo
+review:
+  question: Does Yotpo expose a documented public WebSocket API?
+  answer: false
+  date: '2026-06-25'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    Per API Evangelist scope, HTTP Server-Sent Events (SSE) is in-scope for
+    AsyncAPI modeling. Yotpo documents no SSE streaming surface; its only
+    asynchronous/event surface is HTTP webhooks delivered via the Core API
+    webhook subscriptions (POST callbacks to a merchant-supplied target URL),
+    which are request/response HTTP and not a streaming transport. No AsyncAPI
+    document was authored because no SSE or WebSocket channel is documented.
+findings:
+  summary: |
+    Yotpo does not publish a documented public WebSocket API. All Yotpo
+    products - Reviews/UGC (api.yotpo.com), Loyalty & Referrals
+    (loyalty.yotpo.com/api/v2), and the Core API for subscriptions and store
+    sync (api.yotpo.com/core/v3) - expose only REST (HTTPS) endpoints. Yotpo's
+    Core API supports event delivery through webhook subscriptions, where Yotpo
+    POSTs events to a merchant-supplied target URL; this is outbound HTTP
+    callbacks, not a bidirectional WebSocket (ws:// or wss://) channel. No
+    realtime streaming, SSE, or WebSocket endpoint is documented for reviews,
+    loyalty, subscriptions, or any other product.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.yotpo.com
+      documented: true
+    - protocol: REST
+      scheme: https
+      baseURL: https://loyalty.yotpo.com/api/v2
+      documented: true
+    - protocol: Webhooks
+      scheme: https
+      note: Core API webhook subscriptions POST events to a merchant target URL; outbound HTTP callbacks, not WebSocket or SSE.
+      documented: true
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented in any Yotpo API reference as of the review date.
+  endpointsConfirmedRest:
+    - POST https://api.yotpo.com/oauth/token
+    - GET  https://api.yotpo.com/v1/apps/{app_key}/reviews
+    - POST https://api.yotpo.com/v1/widget/reviews
+    - GET  https://api.yotpo.com/products/{app_key}/{product_id}/bottomline
+    - GET  https://api.yotpo.com/core/v3/stores/{store_id}/products
+    - POST https://api.yotpo.com/core/v3/stores/{store_id}/products
+    - POST https://api.yotpo.com/core/v3/stores/{store_id}/orders
+    - POST https://api.yotpo.com/core/v3/stores/{store_id}/customers
+    - GET  https://api.yotpo.com/core/v3/stores/{store_id}/webhook_subscriptions
+    - POST https://api.yotpo.com/core/v3/stores/{store_id}/webhook_subscriptions
+    - GET  https://loyalty.yotpo.com/api/v2/customers
+    - POST https://loyalty.yotpo.com/api/v2/orders
+    - POST https://loyalty.yotpo.com/api/v2/redemptions
+    - GET  https://loyalty.yotpo.com/api/v2/redemption_options
+sources:
+  - url: https://apidocs.yotpo.com/reference/welcome
+    type: Documentation
+    note: UGC/Reviews API reference; all documented endpoints are HTTPS REST under api.yotpo.com.
+  - url: https://loyaltyapi.yotpo.com/reference/welcome
+    type: Documentation
+    note: Loyalty & Referrals API reference; REST endpoints under loyalty.yotpo.com/api/v2 with x-guid/x-api-key headers.
+  - url: https://core-api.yotpo.com/reference/welcome
+    type: Documentation
+    note: Core API reference; REST sync endpoints and HTTP webhook subscriptions, no streaming transport.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket or SSE protocol surface exists. Yotpo's only event mechanism
+    is outbound HTTP webhook callbacks via Core API webhook subscriptions,
+    which is request/response HTTP and out of scope for AsyncAPI streaming
+    modeling. No AsyncAPI document was authored.

@@ -1,0 +1,279 @@
+{
+  "info": {
+    "name": "Yotpo API",
+    "description": "Yotpo e-commerce retention APIs: Reviews & Ratings, Loyalty & Referrals, Subscriptions (Core API), and Webhooks.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.yotpo.com"
+    },
+    {
+      "key": "loyaltyBaseUrl",
+      "value": "https://loyalty.yotpo.com/api/v2"
+    },
+    {
+      "key": "app_key",
+      "value": ""
+    },
+    {
+      "key": "store_id",
+      "value": ""
+    },
+    {
+      "key": "utoken",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Generate an OAuth access token (utoken).",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oauth/token",
+              "host": ["{{baseUrl}}"],
+              "path": ["oauth", "token"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"client_id\": \"<app_key>\",\n  \"client_secret\": \"<api_secret>\",\n  \"grant_type\": \"client_credentials\"\n}",
+              "options": { "raw": { "language": "json" } }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reviews & Ratings",
+      "item": [
+        {
+          "name": "Retrieve all reviews for an app.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/apps/{{app_key}}/reviews?utoken={{utoken}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "apps", "{{app_key}}", "reviews"],
+              "query": [
+                { "key": "utoken", "value": "{{utoken}}" },
+                { "key": "count", "value": "100", "disabled": true },
+                { "key": "page", "value": "1", "disabled": true }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create a review.",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/v1/widget/reviews",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "widget", "reviews"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"appkey\": \"<app_key>\",\n  \"product_id\": \"<product_id>\",\n  \"email\": \"<email>\",\n  \"display_name\": \"<name>\",\n  \"review_content\": \"<content>\",\n  \"review_title\": \"<title>\",\n  \"review_score\": 5\n}",
+              "options": { "raw": { "language": "json" } }
+            }
+          }
+        },
+        {
+          "name": "Retrieve product bottom line.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/products/{{app_key}}/{{product_id}}/bottomline",
+              "host": ["{{baseUrl}}"],
+              "path": ["products", "{{app_key}}", "{{product_id}}", "bottomline"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Subscriptions (Core API)",
+      "item": [
+        {
+          "name": "Retrieve products.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/core/v3/stores/{{store_id}}/products",
+              "host": ["{{baseUrl}}"],
+              "path": ["core", "v3", "stores", "{{store_id}}", "products"]
+            }
+          }
+        },
+        {
+          "name": "Create an order.",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/core/v3/stores/{{store_id}}/orders",
+              "host": ["{{baseUrl}}"],
+              "path": ["core", "v3", "stores", "{{store_id}}", "orders"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": { "raw": { "language": "json" } }
+            }
+          }
+        },
+        {
+          "name": "Create or update a customer.",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/core/v3/stores/{{store_id}}/customers",
+              "host": ["{{baseUrl}}"],
+              "path": ["core", "v3", "stores", "{{store_id}}", "customers"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": { "raw": { "language": "json" } }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Webhooks",
+      "item": [
+        {
+          "name": "Retrieve webhook subscriptions.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/core/v3/stores/{{store_id}}/webhook_subscriptions",
+              "host": ["{{baseUrl}}"],
+              "path": ["core", "v3", "stores", "{{store_id}}", "webhook_subscriptions"]
+            }
+          }
+        },
+        {
+          "name": "Create a webhook subscription.",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/core/v3/stores/{{store_id}}/webhook_subscriptions",
+              "host": ["{{baseUrl}}"],
+              "path": ["core", "v3", "stores", "{{store_id}}", "webhook_subscriptions"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": { "raw": { "language": "json" } }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Loyalty & Referrals",
+      "item": [
+        {
+          "name": "Fetch a loyalty customer's details.",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "x-guid", "value": "{{loyalty_guid}}" },
+              { "key": "x-api-key", "value": "{{loyalty_api_key}}" }
+            ],
+            "url": {
+              "raw": "{{loyaltyBaseUrl}}/customers?customer_email={{customer_email}}",
+              "host": ["{{loyaltyBaseUrl}}"],
+              "path": ["customers"],
+              "query": [
+                { "key": "customer_email", "value": "{{customer_email}}" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Record a loyalty order.",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "x-guid", "value": "{{loyalty_guid}}" },
+              { "key": "x-api-key", "value": "{{loyalty_api_key}}" }
+            ],
+            "url": {
+              "raw": "{{loyaltyBaseUrl}}/orders",
+              "host": ["{{loyaltyBaseUrl}}"],
+              "path": ["orders"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": { "raw": { "language": "json" } }
+            }
+          }
+        },
+        {
+          "name": "Create a redemption.",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "x-guid", "value": "{{loyalty_guid}}" },
+              { "key": "x-api-key", "value": "{{loyalty_api_key}}" }
+            ],
+            "url": {
+              "raw": "{{loyaltyBaseUrl}}/redemptions",
+              "host": ["{{loyaltyBaseUrl}}"],
+              "path": ["redemptions"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": { "raw": { "language": "json" } }
+            }
+          }
+        },
+        {
+          "name": "List redemption options.",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "x-guid", "value": "{{loyalty_guid}}" },
+              { "key": "x-api-key", "value": "{{loyalty_api_key}}" }
+            ],
+            "url": {
+              "raw": "{{loyaltyBaseUrl}}/redemption_options",
+              "host": ["{{loyaltyBaseUrl}}"],
+              "path": ["redemption_options"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

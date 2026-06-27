@@ -1,0 +1,136 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Yotpo
+providerId: yotpo
+created: '2026-06-25'
+modified: '2026-06-25'
+reconciled: false
+tags:
+- eCommerce
+- Reviews
+- Loyalty
+- Retention Marketing
+- UGC
+- Plans
+description: >-
+  Yotpo packages its products (Reviews & Ratings, Loyalty & Referrals,
+  Subscriptions, UGC) into both self-serve and sales-led plans. Reviews and
+  Loyalty publish a Free tier plus paid tiers (commonly Growth / Prime /
+  Premium-style names) gated by monthly order volume, while larger or
+  multi-product bundles are quoted by sales. The legacy SMS and Email
+  (SMSBump) products were usage-based (per message / per recipient) but were
+  permanently discontinued on December 31, 2025. Exact per-tier prices and
+  order thresholds are not consistently published and are not reconciled in
+  this artifact.
+notes: >-
+  Yotpo's public pricing pages list named tiers per product but most thresholds
+  and bundle prices require a quote. Verify current tier names, order-volume
+  thresholds, and SMS/Email usage rates on the Yotpo pricing pages during
+  reconciliation.
+sources:
+- https://www.yotpo.com/pricing/
+- https://www.yotpo.com/platform/reviews/
+- https://www.yotpo.com/platform/loyalty-and-referrals/
+plans:
+- id: yotpo-free
+  name: Free
+  type: free
+  description: >-
+    Entry-level self-serve tier for Reviews and for Loyalty & Referrals,
+    capped by monthly order volume, with core collection and display features.
+  entries:
+  - label: Free Tier
+    name: free
+    type: limited
+    metric: orders
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: '0.00'
+    userMultiplied: false
+  elements:
+  - name: Reviews Collection
+  - name: Star Ratings
+  - name: Basic Loyalty Program
+- id: yotpo-growth
+  name: Growth / Self-Serve Paid
+  type: subscription
+  description: >-
+    Self-serve paid tiers for Reviews and Loyalty gated by monthly order
+    volume, adding moderation, customization, integrations, and richer UGC
+    and rewards features. Exact prices and thresholds are quoted per product.
+  entries:
+  - label: Self-Serve Paid Plan
+    name: growth
+    type: flat
+    metric: subscription
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: see Yotpo pricing page
+    userMultiplied: false
+  elements:
+  - name: Advanced Reviews
+  - name: Loyalty & Referrals
+  - name: Integrations
+- id: yotpo-sms-email-usage
+  name: SMS & Email Usage (Discontinued)
+  type: usage
+  description: >-
+    Legacy SMS and Email (SMSBump) marketing billed on usage - per message sent
+    for SMS and per recipient/email for Email - on top of the platform plan.
+    These products were permanently discontinued on December 31, 2025; retained
+    here for historical context.
+  entries:
+  - label: SMS Messages
+    name: sms_messages
+    type: usage
+    metric: messages
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: per-message usage (see Yotpo pricing page)
+    userMultiplied: false
+  - label: Email Sends
+    name: email_sends
+    type: usage
+    metric: emails
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: per-recipient usage (see Yotpo pricing page)
+    userMultiplied: false
+  elements:
+  - name: SMS Marketing
+  - name: Email Marketing
+- id: yotpo-enterprise
+  name: Enterprise / Bundles
+  type: enterprise
+  description: >-
+    Sales-led plans bundling multiple Yotpo products (Reviews, Loyalty, SMS,
+    Subscriptions, Email) with higher order volumes, dedicated support, and
+    negotiated terms. Contact Yotpo sales.
+  entries:
+  - label: Enterprise Agreement
+    name: enterprise
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: Multi-Product Bundle
+  - name: Subscriptions
+  - name: Dedicated Support
+  - name: Custom Volume Pricing
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

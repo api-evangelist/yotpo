@@ -1,0 +1,64 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Yotpo
+providerId: yotpo
+created: '2026-06-25'
+modified: '2026-06-25'
+reconciled: false
+tags:
+- eCommerce
+- Reviews
+- Loyalty
+- Retention Marketing
+- UGC
+- Rate Limiting
+- Quotas
+- Throttling
+description: >-
+  Yotpo enforces per-app-key rate limits across its APIs. The Reviews/UGC API
+  documents a published cap of 5,000 requests per minute per app key on the
+  retrieve-reviews endpoint, and recommends querying up to 100 reviews per
+  request (default 10). The Core API and Loyalty & Referrals API apply their
+  own per-account limits that are not consistently published; exact per-endpoint
+  values are not reconciled in this artifact.
+notes: >-
+  The 5,000 requests/minute figure is documented for the Reviews retrieve
+  endpoint. Verify Core API and Loyalty & Referrals limits in their respective
+  reference docs during reconciliation; throttled requests should be expected
+  to return HTTP 429.
+sources:
+- https://apidocs.yotpo.com/reference/retrieve-all-reviews
+- https://apidocs.yotpo.com/reference/guidelines
+- https://loyaltyapi.yotpo.com/reference/welcome
+responseCodes:
+  throttled: 429
+limits:
+- name: Reviews Requests Per Minute
+  scope: app_key
+  metric: requests
+  limit: 5000 per minute
+  notes: Documented cap on the retrieve-reviews endpoint, per app key.
+- name: Reviews Per Request
+  scope: request
+  metric: reviews
+  limit: 100 per request
+  notes: Maximum reviews returned per request; default is 10.
+- name: Core API Limits
+  scope: account
+  metric: requests
+  limit: see provider documentation
+  notes: Per-account limits on Core API sync endpoints; values not published.
+- name: Loyalty & Referrals Limits
+  scope: account
+  metric: requests
+  limit: see provider documentation
+  notes: Per-account limits on the Loyalty & Referrals API; values not published.
+policies:
+- name: Per-App-Key Throttling
+  description: Limits are enforced per app key; spread high-volume sync across batched calls.
+- name: Backoff Strategy
+  description: Clients should implement exponential backoff with jitter and honor Retry-After on HTTP 429.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

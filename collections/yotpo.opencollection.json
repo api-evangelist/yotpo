@@ -1,0 +1,220 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Yotpo API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Generate an OAuth access token (utoken).",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.yotpo.com/oauth/token",
+            "body": {
+              "type": "json",
+              "data": "{\n  \"client_id\": \"<app_key>\",\n  \"client_secret\": \"<api_secret>\",\n  \"grant_type\": \"client_credentials\"\n}"
+            }
+          },
+          "docs": "Exchange app key and API secret for a short-lived utoken."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Reviews & Ratings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve all reviews for an app.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.yotpo.com/v1/apps/{{app_key}}/reviews?utoken={{utoken}}"
+          },
+          "docs": "Retrieve reviews for a store. Up to 100 per request."
+        },
+        {
+          "info": {
+            "name": "Create a review.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.yotpo.com/v1/widget/reviews",
+            "body": {
+              "type": "json",
+              "data": "{\n  \"appkey\": \"<app_key>\",\n  \"product_id\": \"<product_id>\",\n  \"email\": \"<email>\",\n  \"display_name\": \"<name>\",\n  \"review_content\": \"<content>\",\n  \"review_title\": \"<title>\",\n  \"review_score\": 5\n}"
+            }
+          },
+          "docs": "Create a review (asynchronous method)."
+        },
+        {
+          "info": {
+            "name": "Retrieve product bottom line.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.yotpo.com/products/{{app_key}}/{{product_id}}/bottomline"
+          },
+          "docs": "Aggregated average score and total review count for a product."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Subscriptions (Core API)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve products.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.yotpo.com/core/v3/stores/{{store_id}}/products"
+          },
+          "docs": "Retrieve store products."
+        },
+        {
+          "info": {
+            "name": "Create an order.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.yotpo.com/core/v3/stores/{{store_id}}/orders",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an order in the store."
+        },
+        {
+          "info": {
+            "name": "Create or update a customer.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.yotpo.com/core/v3/stores/{{store_id}}/customers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create or update a customer."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Webhooks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve webhook subscriptions.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.yotpo.com/core/v3/stores/{{store_id}}/webhook_subscriptions"
+          },
+          "docs": "Retrieve webhook subscriptions for the store."
+        },
+        {
+          "info": {
+            "name": "Create a webhook subscription.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.yotpo.com/core/v3/stores/{{store_id}}/webhook_subscriptions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a webhook subscription combining a target and filter."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Loyalty & Referrals",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetch a loyalty customer's details.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://loyalty.yotpo.com/api/v2/customers?customer_email={{customer_email}}"
+          },
+          "docs": "Fetch a loyalty customer's point balance by email. Requires x-guid and x-api-key headers."
+        },
+        {
+          "info": {
+            "name": "Record a loyalty order.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://loyalty.yotpo.com/api/v2/orders",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Record an order and award points/discounts."
+        },
+        {
+          "info": {
+            "name": "Create a redemption.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://loyalty.yotpo.com/api/v2/redemptions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Redeem a customer's points for a redemption option."
+        },
+        {
+          "info": {
+            "name": "List redemption options.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://loyalty.yotpo.com/api/v2/redemption_options"
+          },
+          "docs": "List available redemption options."
+        }
+      ]
+    }
+  ]
+}
