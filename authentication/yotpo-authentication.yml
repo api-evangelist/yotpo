@@ -1,0 +1,31 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/yotpo-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+  - query
+schemes:
+- name: UToken
+  type: apiKey
+  in: query
+  parameter: utoken
+  description: OAuth access token obtained from POST /oauth/token.
+  sources:
+  - openapi/yotpo-openapi.yml
+- name: LoyaltyGuid
+  type: apiKey
+  in: header
+  parameter: x-guid
+  description: Loyalty & Referrals account GUID.
+  sources:
+  - openapi/yotpo-openapi.yml
+- name: LoyaltyApiKey
+  type: apiKey
+  in: header
+  parameter: x-api-key
+  description: Loyalty & Referrals API key.
+  sources:
+  - openapi/yotpo-openapi.yml

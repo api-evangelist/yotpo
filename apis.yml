@@ -132,6 +132,14 @@ apis:
   description: Subscribes to and manages event webhooks (orders, reviews, fulfillments)
     via webhook subscriptions under api.yotpo.com/core/v3/stores/{store_id}/webhooks.
 common:
+- type: TrustCenter
+  url: security/yotpo-trust-center.yml
+- type: DomainSecurity
+  url: security/yotpo-domain-security.yml
+- type: Authentication
+  url: authentication/yotpo-authentication.yml
+- type: Blog
+  url: https://www.yotpo.com/blog/
 - type: GitHubOrganization
   url: https://github.com/YotpoLtd
 - type: LinkedIn
