@@ -1,0 +1,14 @@
+{
+  "repo": "yotpo",
+  "feeds": [
+    {
+      "source": "https://www.yotpo.com/blog/",
+      "feed_url": "https://www.yotpo.com/blog/",
+      "title": "Ecommerce Marketing Blog | Yotpo",
+      "saved": 0,
+      "error": "parse_failed"
+    }
+  ],
+  "fetched": "2026-07-11T11:43:46Z",
+  "post_count": 8
+}
