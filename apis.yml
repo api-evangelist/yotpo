@@ -132,6 +132,8 @@ apis:
   description: Subscribes to and manages event webhooks (orders, reviews, fulfillments)
     via webhook subscriptions under api.yotpo.com/core/v3/stores/{store_id}/webhooks.
 common:
+- type: AgenticAccess
+  url: agentic-access/yotpo-agentic-access.yml
 - type: TrustCenter
   url: security/yotpo-trust-center.yml
 - type: DomainSecurity
