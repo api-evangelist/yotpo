@@ -1,0 +1,191 @@
+openapi: 3.0.1
+info:
+  title: Yotpo Authentication Loyalty API
+  description: Specification of Yotpo's e-commerce retention APIs covering reviews and user-generated content, loyalty and referrals, SMS, subscriptions (Core API), and email. Reviews/UGC, SMS, Email, and Core API requests are authenticated with an app key and an OAuth utoken obtained from the store secret; the Loyalty & Referrals API is authenticated with x-guid and x-api-key headers.
+  termsOfService: https://www.yotpo.com/terms-and-conditions/
+  contact:
+    name: Yotpo Support
+    url: https://support.yotpo.com
+  version: '1.0'
+servers:
+- url: https://api.yotpo.com
+  description: Reviews / UGC, SMS, Email, and Core API
+- url: https://loyalty.yotpo.com/api/v2
+  description: Loyalty & Referrals API
+tags:
+- name: Loyalty
+  description: Loyalty and referrals customers, orders, and redemptions.
+paths:
+  /customers:
+    get:
+      operationId: getLoyaltyCustomer
+      tags:
+      - Loyalty
+      summary: Fetch a loyalty customer's details.
+      description: Retrieve a loyalty customer's point balance and details by email. Authenticated with x-guid and x-api-key headers.
+      servers:
+      - url: https://loyalty.yotpo.com/api/v2
+      parameters:
+      - name: customer_email
+        in: query
+        required: true
+        schema:
+          type: string
+          format: email
+      security:
+      - LoyaltyGuid: []
+        LoyaltyApiKey: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoyaltyCustomer'
+  /orders:
+    post:
+      operationId: createLoyaltyOrder
+      tags:
+      - Loyalty
+      summary: Record a loyalty order.
+      description: Record an order made by a customer. Applies the order to all matching active campaigns and awards the necessary points and/or discounts.
+      servers:
+      - url: https://loyalty.yotpo.com/api/v2
+      security:
+      - LoyaltyGuid: []
+        LoyaltyApiKey: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoyaltyOrder'
+      responses:
+        '200':
+          description: OK
+  /redemptions:
+    post:
+      operationId: createRedemption
+      tags:
+      - Loyalty
+      summary: Create a redemption.
+      description: Redeem a customer's points for a particular redemption option. Checks eligibility and balance, deducts points, generates a coupon code, and returns it in the response.
+      servers:
+      - url: https://loyalty.yotpo.com/api/v2
+      security:
+      - LoyaltyGuid: []
+        LoyaltyApiKey: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RedemptionRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedemptionResponse'
+  /redemption_options:
+    get:
+      operationId: listRedemptionOptions
+      tags:
+      - Loyalty
+      summary: List redemption options.
+      servers:
+      - url: https://loyalty.yotpo.com/api/v2
+      security:
+      - LoyaltyGuid: []
+        LoyaltyApiKey: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedemptionOptionList'
+components:
+  schemas:
+    LoyaltyOrder:
+      type: object
+      required:
+      - customer_email
+      - total_amount_cents
+      properties:
+        customer_email:
+          type: string
+          format: email
+        total_amount_cents:
+          type: integer
+        currency_code:
+          type: string
+        order_id:
+          type: string
+    RedemptionResponse:
+      type: object
+      properties:
+        coupon_code:
+          type: string
+        points_deducted:
+          type: integer
+    RedemptionRequest:
+      type: object
+      required:
+      - customer_email
+      - redemption_option_id
+      properties:
+        customer_email:
+          type: string
+          format: email
+        redemption_option_id:
+          type: integer
+    RedemptionOption:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        points_cost:
+          type: integer
+    RedemptionOptionList:
+      type: object
+      properties:
+        redemption_options:
+          type: array
+          items:
+            $ref: '#/components/schemas/RedemptionOption'
+    LoyaltyCustomer:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        first_name:
+          type: string
+        last_name:
+          type: string
+        points_balance:
+          type: integer
+        points_earned:
+          type: integer
+        vip_tier_name:
+          type: string
+  securitySchemes:
+    UToken:
+      type: apiKey
+      in: query
+      name: utoken
+      description: OAuth access token obtained from POST /oauth/token.
+    LoyaltyGuid:
+      type: apiKey
+      in: header
+      name: x-guid
+      description: Loyalty & Referrals account GUID.
+    LoyaltyApiKey:
+      type: apiKey
+      in: header
+      name: x-api-key
+      description: Loyalty & Referrals API key.

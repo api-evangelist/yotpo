@@ -1,0 +1,215 @@
+openapi: 3.0.1
+info:
+  title: Yotpo Authentication Subscriptions API
+  description: Specification of Yotpo's e-commerce retention APIs covering reviews and user-generated content, loyalty and referrals, SMS, subscriptions (Core API), and email. Reviews/UGC, SMS, Email, and Core API requests are authenticated with an app key and an OAuth utoken obtained from the store secret; the Loyalty & Referrals API is authenticated with x-guid and x-api-key headers.
+  termsOfService: https://www.yotpo.com/terms-and-conditions/
+  contact:
+    name: Yotpo Support
+    url: https://support.yotpo.com
+  version: '1.0'
+servers:
+- url: https://api.yotpo.com
+  description: Reviews / UGC, SMS, Email, and Core API
+- url: https://loyalty.yotpo.com/api/v2
+  description: Loyalty & Referrals API
+tags:
+- name: Subscriptions
+  description: Core API store sync and webhook subscriptions.
+paths:
+  /core/v3/stores/{store_id}/products:
+    get:
+      operationId: retrieveProducts
+      tags:
+      - Subscriptions
+      summary: Retrieve products.
+      parameters:
+      - name: store_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductList'
+    post:
+      operationId: createProduct
+      tags:
+      - Subscriptions
+      summary: Create a product.
+      parameters:
+      - name: store_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        '201':
+          description: Created
+  /core/v3/stores/{store_id}/orders:
+    post:
+      operationId: createOrder
+      tags:
+      - Subscriptions
+      summary: Create an order.
+      parameters:
+      - name: store_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+      responses:
+        '201':
+          description: Created
+  /core/v3/stores/{store_id}/customers:
+    post:
+      operationId: createOrUpdateCustomer
+      tags:
+      - Subscriptions
+      summary: Create or update a customer.
+      parameters:
+      - name: store_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+      responses:
+        '200':
+          description: OK
+  /core/v3/stores/{store_id}/webhook_subscriptions:
+    get:
+      operationId: retrieveWebhookSubscriptions
+      tags:
+      - Subscriptions
+      summary: Retrieve webhook subscriptions.
+      parameters:
+      - name: store_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WebhookSubscriptionList'
+    post:
+      operationId: createWebhookSubscription
+      tags:
+      - Subscriptions
+      summary: Create a webhook subscription.
+      parameters:
+      - name: store_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WebhookSubscription'
+      responses:
+        '201':
+          description: Created
+components:
+  schemas:
+    Order:
+      type: object
+      properties:
+        external_id:
+          type: string
+        total_price:
+          type: number
+        currency:
+          type: string
+        customer:
+          $ref: '#/components/schemas/Customer'
+    Product:
+      type: object
+      properties:
+        external_id:
+          type: string
+        name:
+          type: string
+        url:
+          type: string
+        image_url:
+          type: string
+        price:
+          type: string
+    WebhookSubscriptionList:
+      type: object
+      properties:
+        webhook_subscriptions:
+          type: array
+          items:
+            $ref: '#/components/schemas/WebhookSubscription'
+    WebhookSubscription:
+      type: object
+      properties:
+        target_id:
+          type: string
+        filter_id:
+          type: string
+        event_name:
+          type: string
+    ProductList:
+      type: object
+      properties:
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/Product'
+    Customer:
+      type: object
+      properties:
+        external_id:
+          type: string
+        email:
+          type: string
+          format: email
+        first_name:
+          type: string
+        last_name:
+          type: string
+  securitySchemes:
+    UToken:
+      type: apiKey
+      in: query
+      name: utoken
+      description: OAuth access token obtained from POST /oauth/token.
+    LoyaltyGuid:
+      type: apiKey
+      in: header
+      name: x-guid
+      description: Loyalty & Referrals account GUID.
+    LoyaltyApiKey:
+      type: apiKey
+      in: header
+      name: x-api-key
+      description: Loyalty & Referrals API key.

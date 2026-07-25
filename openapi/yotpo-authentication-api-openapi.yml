@@ -1,0 +1,80 @@
+openapi: 3.0.1
+info:
+  title: Yotpo Authentication API
+  description: Specification of Yotpo's e-commerce retention APIs covering reviews and user-generated content, loyalty and referrals, SMS, subscriptions (Core API), and email. Reviews/UGC, SMS, Email, and Core API requests are authenticated with an app key and an OAuth utoken obtained from the store secret; the Loyalty & Referrals API is authenticated with x-guid and x-api-key headers.
+  termsOfService: https://www.yotpo.com/terms-and-conditions/
+  contact:
+    name: Yotpo Support
+    url: https://support.yotpo.com
+  version: '1.0'
+servers:
+- url: https://api.yotpo.com
+  description: Reviews / UGC, SMS, Email, and Core API
+- url: https://loyalty.yotpo.com/api/v2
+  description: Loyalty & Referrals API
+tags:
+- name: Authentication
+  description: OAuth token exchange for app key + secret.
+paths:
+  /oauth/token:
+    post:
+      operationId: createAccessToken
+      tags:
+      - Authentication
+      summary: Generate an OAuth access token (utoken).
+      description: Exchange your app key (store_id) and API secret for a short-lived utoken using the OAuth2 client-credentials grant. The utoken is passed on subsequent Reviews/UGC, SMS, Email, and Core API requests.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenResponse'
+components:
+  schemas:
+    TokenResponse:
+      type: object
+      properties:
+        access_token:
+          type: string
+        token_type:
+          type: string
+          example: bearer
+    TokenRequest:
+      type: object
+      required:
+      - client_id
+      - client_secret
+      - grant_type
+      properties:
+        client_id:
+          type: string
+          description: The store app key.
+        client_secret:
+          type: string
+          description: The store API secret.
+        grant_type:
+          type: string
+          example: client_credentials
+  securitySchemes:
+    UToken:
+      type: apiKey
+      in: query
+      name: utoken
+      description: OAuth access token obtained from POST /oauth/token.
+    LoyaltyGuid:
+      type: apiKey
+      in: header
+      name: x-guid
+      description: Loyalty & Referrals account GUID.
+    LoyaltyApiKey:
+      type: apiKey
+      in: header
+      name: x-api-key
+      description: Loyalty & Referrals API key.

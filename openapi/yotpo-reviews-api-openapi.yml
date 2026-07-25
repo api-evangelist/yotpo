@@ -1,0 +1,198 @@
+openapi: 3.0.1
+info:
+  title: Yotpo Authentication Reviews API
+  description: Specification of Yotpo's e-commerce retention APIs covering reviews and user-generated content, loyalty and referrals, SMS, subscriptions (Core API), and email. Reviews/UGC, SMS, Email, and Core API requests are authenticated with an app key and an OAuth utoken obtained from the store secret; the Loyalty & Referrals API is authenticated with x-guid and x-api-key headers.
+  termsOfService: https://www.yotpo.com/terms-and-conditions/
+  contact:
+    name: Yotpo Support
+    url: https://support.yotpo.com
+  version: '1.0'
+servers:
+- url: https://api.yotpo.com
+  description: Reviews / UGC, SMS, Email, and Core API
+- url: https://loyalty.yotpo.com/api/v2
+  description: Loyalty & Referrals API
+tags:
+- name: Reviews
+  description: Reviews and user-generated content.
+paths:
+  /v1/apps/{app_key}/reviews:
+    get:
+      operationId: retrieveAllReviews
+      tags:
+      - Reviews
+      summary: Retrieve all reviews for an app.
+      description: Retrieve reviews for the store identified by app_key. Limited to 5,000 requests/minute per app key; up to 100 reviews per request (default 10).
+      parameters:
+      - name: app_key
+        in: path
+        required: true
+        description: The store app key (store_id).
+        schema:
+          type: string
+      - name: utoken
+        in: query
+        required: true
+        description: OAuth access token obtained from /oauth/token.
+        schema:
+          type: string
+      - name: count
+        in: query
+        required: false
+        description: Number of reviews to return per request (max 100).
+        schema:
+          type: integer
+          default: 10
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 1
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReviewsResponse'
+  /v1/widget/reviews:
+    post:
+      operationId: createReview
+      tags:
+      - Reviews
+      summary: Create a review.
+      description: Create a review for a product. This is the asynchronous method and is recommended for general use.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateReviewRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Review'
+  /products/{app_key}/{product_id}/bottomline:
+    get:
+      operationId: getProductBottomLine
+      tags:
+      - Reviews
+      summary: Retrieve product bottom line.
+      description: Retrieve the aggregated average score and total review count for a specific product.
+      parameters:
+      - name: app_key
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: product_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BottomLineResponse'
+components:
+  schemas:
+    CreateReviewRequest:
+      type: object
+      required:
+      - appkey
+      - product_id
+      - email
+      - review_content
+      - review_score
+      properties:
+        appkey:
+          type: string
+        product_id:
+          type: string
+        domain:
+          type: string
+        email:
+          type: string
+          format: email
+        display_name:
+          type: string
+        review_content:
+          type: string
+        review_title:
+          type: string
+        review_score:
+          type: integer
+          minimum: 1
+          maximum: 5
+    ReviewsResponse:
+      type: object
+      properties:
+        status:
+          type: object
+        response:
+          type: object
+          properties:
+            reviews:
+              type: array
+              items:
+                $ref: '#/components/schemas/Review'
+            bottomline:
+              $ref: '#/components/schemas/BottomLine'
+    BottomLine:
+      type: object
+      properties:
+        total_review:
+          type: integer
+        average_score:
+          type: number
+    BottomLineResponse:
+      type: object
+      properties:
+        response:
+          type: object
+          properties:
+            bottomline:
+              $ref: '#/components/schemas/BottomLine'
+    Review:
+      type: object
+      properties:
+        id:
+          type: integer
+        score:
+          type: integer
+        votes_up:
+          type: integer
+        votes_down:
+          type: integer
+        content:
+          type: string
+        title:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        verified_buyer:
+          type: boolean
+  securitySchemes:
+    UToken:
+      type: apiKey
+      in: query
+      name: utoken
+      description: OAuth access token obtained from POST /oauth/token.
+    LoyaltyGuid:
+      type: apiKey
+      in: header
+      name: x-guid
+      description: Loyalty & Referrals account GUID.
+    LoyaltyApiKey:
+      type: apiKey
+      in: header
+      name: x-api-key
+      description: Loyalty & Referrals API key.
