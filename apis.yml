@@ -9,7 +9,20 @@ description: Yotpo is an eCommerce retention marketing platform offering Reviews
   GUID plus API key) - so merchants can sync orders, products, and customers and drive
   reviews, points, and redemptions programmatically. Yotpo's SMS & Email (SMSBump)
   products were discontinued on December 31, 2025.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/yotpo.png
 tags:
 - eCommerce
 - Reviews
@@ -20,117 +33,110 @@ created: '2026-06-25'
 modified: '2026-06-25'
 specificationVersion: '0.19'
 apis:
-- aid: yotpo:yotpo-reviews-ratings-api
-  name: Yotpo Reviews & Ratings API
-  tags:
-  - Reviews
-  - Ratings
-  - UGC
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+- aid: yotpo:yotpo-authentication-api
+  name: Yotpo Authentication API
+  description: OAuth token exchange for app key + secret.
   humanURL: https://apidocs.yotpo.com/reference/welcome
   baseURL: https://api.yotpo.com
+  tags:
+  - Authentication
   properties:
-  - url: https://apidocs.yotpo.com/reference/welcome
-    type: Documentation
-  - url: https://apidocs.yotpo.com/reference
-    type: APIReference
-  - url: openapi/yotpo-openapi.yml
-    type: OpenAPI
-  description: Retrieve, create, and moderate product reviews, ratings, bottom-line
-    scores, and Q&A under api.yotpo.com/v1, authenticated with an app key and an OAuth
-    utoken generated from the store secret.
-- aid: yotpo:yotpo-loyalty-referrals-api
-  name: Yotpo Loyalty & Referrals API
+  - type: OpenAPI
+    url: openapi/yotpo-authentication-api-openapi.yml
+  - type: Documentation
+    url: https://apidocs.yotpo.com/reference/welcome
+  - type: APIReference
+    url: https://apidocs.yotpo.com/reference
+  - type: Documentation
+    url: https://loyaltyapi.yotpo.com/reference/welcome
+  - type: APIReference
+    url: https://loyaltyapi.yotpo.com/reference/authentication
+  - type: Documentation
+    url: https://apidocs.yotpo.com/reference
+  - type: Documentation
+    url: https://core-api.yotpo.com/reference/subscribers
+  - type: APIReference
+    url: https://core-api.yotpo.com/reference/create-subscription
+  - type: Documentation
+    url: https://core-api.yotpo.com/reference
+- aid: yotpo:yotpo-loyalty-api
+  name: Yotpo Loyalty API
+  description: Loyalty and referrals customers, orders, and redemptions.
+  humanURL: https://apidocs.yotpo.com/reference/welcome
+  baseURL: https://api.yotpo.com
   tags:
   - Loyalty
-  - Referrals
-  - Points
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://loyaltyapi.yotpo.com/reference/welcome
-  baseURL: https://loyalty.yotpo.com/api/v2
   properties:
-  - url: https://loyaltyapi.yotpo.com/reference/welcome
-    type: Documentation
-  - url: https://loyaltyapi.yotpo.com/reference/authentication
-    type: APIReference
-  - url: openapi/yotpo-openapi.yml
-    type: OpenAPI
-  description: Manage loyalty customers, point balances, orders, redemptions, and
-    referral links under loyalty.yotpo.com/api/v2, authenticated with a program GUID
-    and API key.
-- aid: yotpo:yotpo-sms-email-api
-  name: Yotpo SMS & Email API
-  tags:
-  - SMS
-  - Email
-  - Marketing
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://apidocs.yotpo.com/reference
-  baseURL: https://api.yotpo.com
-  properties:
-  - url: https://apidocs.yotpo.com/reference
-    type: Documentation
-  - url: openapi/yotpo-openapi.yml
-    type: OpenAPI
-  description: Legacy SMS & Email (SMSBump) marketing API for managing contacts,
-    lists, and campaigns. Yotpo permanently discontinued its SMS and Email products
-    on December 31, 2025; documented here for historical completeness.
-- aid: yotpo:yotpo-ugc-visual-api
-  name: Yotpo UGC & Visual API
-  tags:
-  - UGC
-  - Visual
-  - Galleries
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  - type: OpenAPI
+    url: openapi/yotpo-loyalty-api-openapi.yml
+  - type: Documentation
+    url: https://apidocs.yotpo.com/reference/welcome
+  - type: APIReference
+    url: https://apidocs.yotpo.com/reference
+  - type: Documentation
+    url: https://loyaltyapi.yotpo.com/reference/welcome
+  - type: APIReference
+    url: https://loyaltyapi.yotpo.com/reference/authentication
+  - type: Documentation
+    url: https://apidocs.yotpo.com/reference
+  - type: Documentation
+    url: https://core-api.yotpo.com/reference/subscribers
+  - type: APIReference
+    url: https://core-api.yotpo.com/reference/create-subscription
+  - type: Documentation
+    url: https://core-api.yotpo.com/reference
+- aid: yotpo:yotpo-reviews-api
+  name: Yotpo Reviews API
+  description: Reviews and user-generated content.
   humanURL: https://apidocs.yotpo.com/reference/welcome
   baseURL: https://api.yotpo.com
+  tags:
+  - Reviews
   properties:
-  - url: https://apidocs.yotpo.com/reference/welcome
-    type: Documentation
-  - url: https://apidocs.yotpo.com/reference
-    type: APIReference
-  - url: openapi/yotpo-openapi.yml
-    type: OpenAPI
-  description: Surfaces user-generated content - review images, widget review data,
-    and LLM-optimized content HTML - for galleries and on-site display, served from
-    the UGC API under api.yotpo.com.
+  - type: OpenAPI
+    url: openapi/yotpo-reviews-api-openapi.yml
+  - type: Documentation
+    url: https://apidocs.yotpo.com/reference/welcome
+  - type: APIReference
+    url: https://apidocs.yotpo.com/reference
+  - type: Documentation
+    url: https://loyaltyapi.yotpo.com/reference/welcome
+  - type: APIReference
+    url: https://loyaltyapi.yotpo.com/reference/authentication
+  - type: Documentation
+    url: https://apidocs.yotpo.com/reference
+  - type: Documentation
+    url: https://core-api.yotpo.com/reference/subscribers
+  - type: APIReference
+    url: https://core-api.yotpo.com/reference/create-subscription
+  - type: Documentation
+    url: https://core-api.yotpo.com/reference
 - aid: yotpo:yotpo-subscriptions-api
   name: Yotpo Subscriptions API
+  description: Core API store sync and webhook subscriptions.
+  humanURL: https://apidocs.yotpo.com/reference/welcome
+  baseURL: https://api.yotpo.com
   tags:
   - Subscriptions
-  - Recurring
-  - eCommerce
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://core-api.yotpo.com/reference/create-subscription
-  baseURL: https://api.yotpo.com/core/v3
   properties:
-  - url: https://core-api.yotpo.com/reference/subscribers
-    type: Documentation
-  - url: https://core-api.yotpo.com/reference/create-subscription
-    type: APIReference
-  - url: openapi/yotpo-openapi.yml
-    type: OpenAPI
-  description: Creates and retrieves recurring subscriptions and subscribers, plus
-    the underlying orders, products, and customers, through the Core API under
-    api.yotpo.com/core/v3/stores/{store_id}, authenticated with an OAuth utoken.
-- aid: yotpo:yotpo-webhooks
-  name: Yotpo Webhooks
-  tags:
-  - Webhooks
-  - Events
-  - Notifications
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://core-api.yotpo.com/reference
-  baseURL: https://api.yotpo.com/core/v3
-  properties:
-  - url: https://core-api.yotpo.com/reference
-    type: Documentation
-  - url: https://core-api.yotpo.com/reference/create-subscription
-    type: APIReference
-  - url: openapi/yotpo-openapi.yml
-    type: OpenAPI
-  description: Subscribes to and manages event webhooks (orders, reviews, fulfillments)
-    via webhook subscriptions under api.yotpo.com/core/v3/stores/{store_id}/webhooks.
+  - type: OpenAPI
+    url: openapi/yotpo-subscriptions-api-openapi.yml
+  - type: Documentation
+    url: https://apidocs.yotpo.com/reference/welcome
+  - type: APIReference
+    url: https://apidocs.yotpo.com/reference
+  - type: Documentation
+    url: https://loyaltyapi.yotpo.com/reference/welcome
+  - type: APIReference
+    url: https://loyaltyapi.yotpo.com/reference/authentication
+  - type: Documentation
+    url: https://apidocs.yotpo.com/reference
+  - type: Documentation
+    url: https://core-api.yotpo.com/reference/subscribers
+  - type: APIReference
+    url: https://core-api.yotpo.com/reference/create-subscription
+  - type: Documentation
+    url: https://core-api.yotpo.com/reference
 common:
 - type: AgenticAccess
   url: agentic-access/yotpo-agentic-access.yml
