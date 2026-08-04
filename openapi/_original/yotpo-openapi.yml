@@ -1,0 +1,604 @@
+openapi: 3.0.1
+info:
+  title: Yotpo API
+  description: >-
+    Specification of Yotpo's e-commerce retention APIs covering reviews and
+    user-generated content, loyalty and referrals, SMS, subscriptions (Core
+    API), and email. Reviews/UGC, SMS, Email, and Core API requests are
+    authenticated with an app key and an OAuth utoken obtained from the store
+    secret; the Loyalty & Referrals API is authenticated with x-guid and
+    x-api-key headers.
+  termsOfService: https://www.yotpo.com/terms-and-conditions/
+  contact:
+    name: Yotpo Support
+    url: https://support.yotpo.com
+  version: '1.0'
+servers:
+  - url: https://api.yotpo.com
+    description: Reviews / UGC, SMS, Email, and Core API
+  - url: https://loyalty.yotpo.com/api/v2
+    description: Loyalty & Referrals API
+tags:
+  - name: Authentication
+    description: OAuth token exchange for app key + secret.
+  - name: Reviews
+    description: Reviews and user-generated content.
+  - name: Loyalty
+    description: Loyalty and referrals customers, orders, and redemptions.
+  - name: Subscriptions
+    description: Core API store sync and webhook subscriptions.
+paths:
+  /oauth/token:
+    post:
+      operationId: createAccessToken
+      tags:
+        - Authentication
+      summary: Generate an OAuth access token (utoken).
+      description: >-
+        Exchange your app key (store_id) and API secret for a short-lived
+        utoken using the OAuth2 client-credentials grant. The utoken is passed
+        on subsequent Reviews/UGC, SMS, Email, and Core API requests.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenResponse'
+  /v1/apps/{app_key}/reviews:
+    get:
+      operationId: retrieveAllReviews
+      tags:
+        - Reviews
+      summary: Retrieve all reviews for an app.
+      description: >-
+        Retrieve reviews for the store identified by app_key. Limited to 5,000
+        requests/minute per app key; up to 100 reviews per request (default 10).
+      parameters:
+        - name: app_key
+          in: path
+          required: true
+          description: The store app key (store_id).
+          schema:
+            type: string
+        - name: utoken
+          in: query
+          required: true
+          description: OAuth access token obtained from /oauth/token.
+          schema:
+            type: string
+        - name: count
+          in: query
+          required: false
+          description: Number of reviews to return per request (max 100).
+          schema:
+            type: integer
+            default: 10
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 1
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReviewsResponse'
+  /v1/widget/reviews:
+    post:
+      operationId: createReview
+      tags:
+        - Reviews
+      summary: Create a review.
+      description: >-
+        Create a review for a product. This is the asynchronous method and is
+        recommended for general use.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateReviewRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Review'
+  /products/{app_key}/{product_id}/bottomline:
+    get:
+      operationId: getProductBottomLine
+      tags:
+        - Reviews
+      summary: Retrieve product bottom line.
+      description: >-
+        Retrieve the aggregated average score and total review count for a
+        specific product.
+      parameters:
+        - name: app_key
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: product_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BottomLineResponse'
+  /core/v3/stores/{store_id}/products:
+    get:
+      operationId: retrieveProducts
+      tags:
+        - Subscriptions
+      summary: Retrieve products.
+      parameters:
+        - name: store_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductList'
+    post:
+      operationId: createProduct
+      tags:
+        - Subscriptions
+      summary: Create a product.
+      parameters:
+        - name: store_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        '201':
+          description: Created
+  /core/v3/stores/{store_id}/orders:
+    post:
+      operationId: createOrder
+      tags:
+        - Subscriptions
+      summary: Create an order.
+      parameters:
+        - name: store_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+      responses:
+        '201':
+          description: Created
+  /core/v3/stores/{store_id}/customers:
+    post:
+      operationId: createOrUpdateCustomer
+      tags:
+        - Subscriptions
+      summary: Create or update a customer.
+      parameters:
+        - name: store_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+      responses:
+        '200':
+          description: OK
+  /core/v3/stores/{store_id}/webhook_subscriptions:
+    get:
+      operationId: retrieveWebhookSubscriptions
+      tags:
+        - Subscriptions
+      summary: Retrieve webhook subscriptions.
+      parameters:
+        - name: store_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WebhookSubscriptionList'
+    post:
+      operationId: createWebhookSubscription
+      tags:
+        - Subscriptions
+      summary: Create a webhook subscription.
+      parameters:
+        - name: store_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WebhookSubscription'
+      responses:
+        '201':
+          description: Created
+  /customers:
+    get:
+      operationId: getLoyaltyCustomer
+      tags:
+        - Loyalty
+      summary: Fetch a loyalty customer's details.
+      description: >-
+        Retrieve a loyalty customer's point balance and details by email.
+        Authenticated with x-guid and x-api-key headers.
+      servers:
+        - url: https://loyalty.yotpo.com/api/v2
+      parameters:
+        - name: customer_email
+          in: query
+          required: true
+          schema:
+            type: string
+            format: email
+      security:
+        - LoyaltyGuid: []
+          LoyaltyApiKey: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoyaltyCustomer'
+  /orders:
+    post:
+      operationId: createLoyaltyOrder
+      tags:
+        - Loyalty
+      summary: Record a loyalty order.
+      description: >-
+        Record an order made by a customer. Applies the order to all matching
+        active campaigns and awards the necessary points and/or discounts.
+      servers:
+        - url: https://loyalty.yotpo.com/api/v2
+      security:
+        - LoyaltyGuid: []
+          LoyaltyApiKey: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoyaltyOrder'
+      responses:
+        '200':
+          description: OK
+  /redemptions:
+    post:
+      operationId: createRedemption
+      tags:
+        - Loyalty
+      summary: Create a redemption.
+      description: >-
+        Redeem a customer's points for a particular redemption option. Checks
+        eligibility and balance, deducts points, generates a coupon code, and
+        returns it in the response.
+      servers:
+        - url: https://loyalty.yotpo.com/api/v2
+      security:
+        - LoyaltyGuid: []
+          LoyaltyApiKey: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RedemptionRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedemptionResponse'
+  /redemption_options:
+    get:
+      operationId: listRedemptionOptions
+      tags:
+        - Loyalty
+      summary: List redemption options.
+      servers:
+        - url: https://loyalty.yotpo.com/api/v2
+      security:
+        - LoyaltyGuid: []
+          LoyaltyApiKey: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedemptionOptionList'
+components:
+  securitySchemes:
+    UToken:
+      type: apiKey
+      in: query
+      name: utoken
+      description: OAuth access token obtained from POST /oauth/token.
+    LoyaltyGuid:
+      type: apiKey
+      in: header
+      name: x-guid
+      description: Loyalty & Referrals account GUID.
+    LoyaltyApiKey:
+      type: apiKey
+      in: header
+      name: x-api-key
+      description: Loyalty & Referrals API key.
+  schemas:
+    TokenRequest:
+      type: object
+      required:
+        - client_id
+        - client_secret
+        - grant_type
+      properties:
+        client_id:
+          type: string
+          description: The store app key.
+        client_secret:
+          type: string
+          description: The store API secret.
+        grant_type:
+          type: string
+          example: client_credentials
+    TokenResponse:
+      type: object
+      properties:
+        access_token:
+          type: string
+        token_type:
+          type: string
+          example: bearer
+    ReviewsResponse:
+      type: object
+      properties:
+        status:
+          type: object
+        response:
+          type: object
+          properties:
+            reviews:
+              type: array
+              items:
+                $ref: '#/components/schemas/Review'
+            bottomline:
+              $ref: '#/components/schemas/BottomLine'
+    Review:
+      type: object
+      properties:
+        id:
+          type: integer
+        score:
+          type: integer
+        votes_up:
+          type: integer
+        votes_down:
+          type: integer
+        content:
+          type: string
+        title:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        verified_buyer:
+          type: boolean
+    CreateReviewRequest:
+      type: object
+      required:
+        - appkey
+        - product_id
+        - email
+        - review_content
+        - review_score
+      properties:
+        appkey:
+          type: string
+        product_id:
+          type: string
+        domain:
+          type: string
+        email:
+          type: string
+          format: email
+        display_name:
+          type: string
+        review_content:
+          type: string
+        review_title:
+          type: string
+        review_score:
+          type: integer
+          minimum: 1
+          maximum: 5
+    BottomLine:
+      type: object
+      properties:
+        total_review:
+          type: integer
+        average_score:
+          type: number
+    BottomLineResponse:
+      type: object
+      properties:
+        response:
+          type: object
+          properties:
+            bottomline:
+              $ref: '#/components/schemas/BottomLine'
+    Product:
+      type: object
+      properties:
+        external_id:
+          type: string
+        name:
+          type: string
+        url:
+          type: string
+        image_url:
+          type: string
+        price:
+          type: string
+    ProductList:
+      type: object
+      properties:
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/Product'
+    Order:
+      type: object
+      properties:
+        external_id:
+          type: string
+        total_price:
+          type: number
+        currency:
+          type: string
+        customer:
+          $ref: '#/components/schemas/Customer'
+    Customer:
+      type: object
+      properties:
+        external_id:
+          type: string
+        email:
+          type: string
+          format: email
+        first_name:
+          type: string
+        last_name:
+          type: string
+    WebhookSubscription:
+      type: object
+      properties:
+        target_id:
+          type: string
+        filter_id:
+          type: string
+        event_name:
+          type: string
+    WebhookSubscriptionList:
+      type: object
+      properties:
+        webhook_subscriptions:
+          type: array
+          items:
+            $ref: '#/components/schemas/WebhookSubscription'
+    LoyaltyCustomer:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        first_name:
+          type: string
+        last_name:
+          type: string
+        points_balance:
+          type: integer
+        points_earned:
+          type: integer
+        vip_tier_name:
+          type: string
+    LoyaltyOrder:
+      type: object
+      required:
+        - customer_email
+        - total_amount_cents
+      properties:
+        customer_email:
+          type: string
+          format: email
+        total_amount_cents:
+          type: integer
+        currency_code:
+          type: string
+        order_id:
+          type: string
+    RedemptionRequest:
+      type: object
+      required:
+        - customer_email
+        - redemption_option_id
+      properties:
+        customer_email:
+          type: string
+          format: email
+        redemption_option_id:
+          type: integer
+    RedemptionResponse:
+      type: object
+      properties:
+        coupon_code:
+          type: string
+        points_deducted:
+          type: integer
+    RedemptionOption:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        points_cost:
+          type: integer
+    RedemptionOptionList:
+      type: object
+      properties:
+        redemption_options:
+          type: array
+          items:
+            $ref: '#/components/schemas/RedemptionOption'

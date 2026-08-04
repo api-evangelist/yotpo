@@ -1,0 +1,20 @@
+{
+  "provider": "yotpo",
+  "sources": [
+    "yotpo-authentication-api-openapi.yml",
+    "yotpo-loyalty-api-openapi.yml",
+    "yotpo-reviews-api-openapi.yml",
+    "yotpo-subscriptions-api-openapi.yml"
+  ],
+  "outputs": [
+    "yotpo-authentication-api-openapi.yml",
+    "yotpo-loyalty-api-openapi.yml",
+    "yotpo-reviews-api-openapi.yml",
+    "yotpo-subscriptions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
