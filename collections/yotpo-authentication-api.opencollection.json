@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Yotpo Authentication API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Generate an OAuth access token (utoken).",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.yotpo.com/oauth/token",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Exchange your app key (store_id) and API secret for a short-lived utoken using the OAuth2 client-credentials grant. The utoken is passed on subsequent Reviews/UGC, SMS, Email, and Core API requests."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

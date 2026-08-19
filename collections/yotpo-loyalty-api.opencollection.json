@@ -1,0 +1,101 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Yotpo Authentication Loyalty API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Loyalty",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetch a loyalty customer's details.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.yotpo.com/customers",
+            "params": [
+              {
+                "name": "customer_email",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-guid",
+              "value": "{{x-guid}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieve a loyalty customer's point balance and details by email. Authenticated with x-guid and x-api-key headers."
+        },
+        {
+          "info": {
+            "name": "Record a loyalty order.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.yotpo.com/orders",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-guid",
+              "value": "{{x-guid}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Record an order made by a customer. Applies the order to all matching active campaigns and awards the necessary points and/or discounts."
+        },
+        {
+          "info": {
+            "name": "Create a redemption.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.yotpo.com/redemptions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-guid",
+              "value": "{{x-guid}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Redeem a customer's points for a particular redemption option. Checks eligibility and balance, deducts points, generates a coupon code, and returns it in the response."
+        },
+        {
+          "info": {
+            "name": "List redemption options.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.yotpo.com/redemption_options",
+            "auth": {
+              "type": "apikey",
+              "key": "x-guid",
+              "value": "{{x-guid}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List redemption options."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,142 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Yotpo Authentication Subscriptions API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Subscriptions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve products.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.yotpo.com/core/v3/stores/:store_id/products",
+            "params": [
+              {
+                "name": "store_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve products."
+        },
+        {
+          "info": {
+            "name": "Create a product.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.yotpo.com/core/v3/stores/:store_id/products",
+            "params": [
+              {
+                "name": "store_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a product."
+        },
+        {
+          "info": {
+            "name": "Create an order.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.yotpo.com/core/v3/stores/:store_id/orders",
+            "params": [
+              {
+                "name": "store_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an order."
+        },
+        {
+          "info": {
+            "name": "Create or update a customer.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.yotpo.com/core/v3/stores/:store_id/customers",
+            "params": [
+              {
+                "name": "store_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create or update a customer."
+        },
+        {
+          "info": {
+            "name": "Retrieve webhook subscriptions.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.yotpo.com/core/v3/stores/:store_id/webhook_subscriptions",
+            "params": [
+              {
+                "name": "store_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve webhook subscriptions."
+        },
+        {
+          "info": {
+            "name": "Create a webhook subscription.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.yotpo.com/core/v3/stores/:store_id/webhook_subscriptions",
+            "params": [
+              {
+                "name": "store_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a webhook subscription."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
