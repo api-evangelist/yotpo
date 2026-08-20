@@ -24,6 +24,12 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/yotpo.png
 tags:
+- E-Commerce
+- Reviews
+- Loyalty
+- Retention Marketing
+- UGC
+tags_raw:
 - eCommerce
 - Reviews
 - Loyalty
@@ -117,6 +123,8 @@ apis:
   humanURL: https://apidocs.yotpo.com/reference/welcome
   baseURL: https://api.yotpo.com
   tags:
+  - Subscription
+  tags_raw:
   - Subscriptions
   properties:
   - type: OpenAPI
