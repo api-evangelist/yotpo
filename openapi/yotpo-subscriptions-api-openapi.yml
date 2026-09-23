@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Yotpo Authentication Subscriptions API
+  title: Yotpo Subscriptions API
   description: Specification of Yotpo's e-commerce retention APIs covering reviews and user-generated content, loyalty and referrals, SMS, subscriptions (Core API), and email. Reviews/UGC, SMS, Email, and Core API requests are authenticated with an app key and an OAuth utoken obtained from the store secret; the Loyalty & Referrals API is authenticated with x-guid and x-api-key headers.
   termsOfService: https://www.yotpo.com/terms-and-conditions/
   contact:
@@ -21,7 +21,7 @@ paths:
       operationId: retrieveProducts
       tags:
       - Subscriptions
-      summary: Retrieve products.
+      summary: Retrieve products
       parameters:
       - name: store_id
         in: path
@@ -39,7 +39,7 @@ paths:
       operationId: createProduct
       tags:
       - Subscriptions
-      summary: Create a product.
+      summary: Create a product
       parameters:
       - name: store_id
         in: path
@@ -60,7 +60,7 @@ paths:
       operationId: createOrder
       tags:
       - Subscriptions
-      summary: Create an order.
+      summary: Create an order
       parameters:
       - name: store_id
         in: path
@@ -81,7 +81,7 @@ paths:
       operationId: createOrUpdateCustomer
       tags:
       - Subscriptions
-      summary: Create or update a customer.
+      summary: Create or update a customer
       parameters:
       - name: store_id
         in: path
@@ -102,7 +102,7 @@ paths:
       operationId: retrieveWebhookSubscriptions
       tags:
       - Subscriptions
-      summary: Retrieve webhook subscriptions.
+      summary: Retrieve webhook subscriptions
       parameters:
       - name: store_id
         in: path
@@ -120,7 +120,7 @@ paths:
       operationId: createWebhookSubscription
       tags:
       - Subscriptions
-      summary: Create a webhook subscription.
+      summary: Create a webhook subscription
       parameters:
       - name: store_id
         in: path
@@ -138,6 +138,18 @@ paths:
           description: Created
 components:
   schemas:
+    Customer:
+      type: object
+      properties:
+        external_id:
+          type: string
+        email:
+          type: string
+          format: email
+        first_name:
+          type: string
+        last_name:
+          type: string
     Order:
       type: object
       properties:
@@ -149,19 +161,13 @@ components:
           type: string
         customer:
           $ref: '#/components/schemas/Customer'
-    Product:
+    ProductList:
       type: object
       properties:
-        external_id:
-          type: string
-        name:
-          type: string
-        url:
-          type: string
-        image_url:
-          type: string
-        price:
-          type: string
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/Product'
     WebhookSubscriptionList:
       type: object
       properties:
@@ -178,24 +184,18 @@ components:
           type: string
         event_name:
           type: string
-    ProductList:
-      type: object
-      properties:
-        products:
-          type: array
-          items:
-            $ref: '#/components/schemas/Product'
-    Customer:
+    Product:
       type: object
       properties:
         external_id:
           type: string
-        email:
+        name:
           type: string
-          format: email
-        first_name:
+        url:
           type: string
-        last_name:
+        image_url:
+          type: string
+        price:
           type: string
   securitySchemes:
     UToken:

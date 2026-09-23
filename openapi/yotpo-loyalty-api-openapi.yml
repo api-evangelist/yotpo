@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Yotpo Authentication Loyalty API
+  title: Yotpo Loyalty API
   description: Specification of Yotpo's e-commerce retention APIs covering reviews and user-generated content, loyalty and referrals, SMS, subscriptions (Core API), and email. Reviews/UGC, SMS, Email, and Core API requests are authenticated with an app key and an OAuth utoken obtained from the store secret; the Loyalty & Referrals API is authenticated with x-guid and x-api-key headers.
   termsOfService: https://www.yotpo.com/terms-and-conditions/
   contact:
@@ -21,7 +21,7 @@ paths:
       operationId: getLoyaltyCustomer
       tags:
       - Loyalty
-      summary: Fetch a loyalty customer's details.
+      summary: Fetch a loyalty customer's details
       description: Retrieve a loyalty customer's point balance and details by email. Authenticated with x-guid and x-api-key headers.
       servers:
       - url: https://loyalty.yotpo.com/api/v2
@@ -47,7 +47,7 @@ paths:
       operationId: createLoyaltyOrder
       tags:
       - Loyalty
-      summary: Record a loyalty order.
+      summary: Record a loyalty order
       description: Record an order made by a customer. Applies the order to all matching active campaigns and awards the necessary points and/or discounts.
       servers:
       - url: https://loyalty.yotpo.com/api/v2
@@ -68,7 +68,7 @@ paths:
       operationId: createRedemption
       tags:
       - Loyalty
-      summary: Create a redemption.
+      summary: Create a redemption
       description: Redeem a customer's points for a particular redemption option. Checks eligibility and balance, deducts points, generates a coupon code, and returns it in the response.
       servers:
       - url: https://loyalty.yotpo.com/api/v2
@@ -93,7 +93,7 @@ paths:
       operationId: listRedemptionOptions
       tags:
       - Loyalty
-      summary: List redemption options.
+      summary: List redemption options
       servers:
       - url: https://loyalty.yotpo.com/api/v2
       security:
@@ -123,13 +123,22 @@ components:
           type: string
         order_id:
           type: string
-    RedemptionResponse:
+    LoyaltyCustomer:
       type: object
       properties:
-        coupon_code:
+        email:
           type: string
-        points_deducted:
+          format: email
+        first_name:
+          type: string
+        last_name:
+          type: string
+        points_balance:
           type: integer
+        points_earned:
+          type: integer
+        vip_tier_name:
+          type: string
     RedemptionRequest:
       type: object
       required:
@@ -150,6 +159,13 @@ components:
           type: string
         points_cost:
           type: integer
+    RedemptionResponse:
+      type: object
+      properties:
+        coupon_code:
+          type: string
+        points_deducted:
+          type: integer
     RedemptionOptionList:
       type: object
       properties:
@@ -157,22 +173,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RedemptionOption'
-    LoyaltyCustomer:
-      type: object
-      properties:
-        email:
-          type: string
-          format: email
-        first_name:
-          type: string
-        last_name:
-          type: string
-        points_balance:
-          type: integer
-        points_earned:
-          type: integer
-        vip_tier_name:
-          type: string
   securitySchemes:
     UToken:
       type: apiKey

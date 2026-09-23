@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Yotpo Authentication Reviews API
+  title: Yotpo Reviews API
   description: Specification of Yotpo's e-commerce retention APIs covering reviews and user-generated content, loyalty and referrals, SMS, subscriptions (Core API), and email. Reviews/UGC, SMS, Email, and Core API requests are authenticated with an app key and an OAuth utoken obtained from the store secret; the Loyalty & Referrals API is authenticated with x-guid and x-api-key headers.
   termsOfService: https://www.yotpo.com/terms-and-conditions/
   contact:
@@ -21,7 +21,7 @@ paths:
       operationId: retrieveAllReviews
       tags:
       - Reviews
-      summary: Retrieve all reviews for an app.
+      summary: Retrieve all reviews for an app
       description: Retrieve reviews for the store identified by app_key. Limited to 5,000 requests/minute per app key; up to 100 reviews per request (default 10).
       parameters:
       - name: app_key
@@ -61,7 +61,7 @@ paths:
       operationId: createReview
       tags:
       - Reviews
-      summary: Create a review.
+      summary: Create a review
       description: Create a review for a product. This is the asynchronous method and is recommended for general use.
       requestBody:
         required: true
@@ -81,7 +81,7 @@ paths:
       operationId: getProductBottomLine
       tags:
       - Reviews
-      summary: Retrieve product bottom line.
+      summary: Retrieve product bottom line
       description: Retrieve the aggregated average score and total review count for a specific product.
       parameters:
       - name: app_key
@@ -131,27 +131,6 @@ components:
           type: integer
           minimum: 1
           maximum: 5
-    ReviewsResponse:
-      type: object
-      properties:
-        status:
-          type: object
-        response:
-          type: object
-          properties:
-            reviews:
-              type: array
-              items:
-                $ref: '#/components/schemas/Review'
-            bottomline:
-              $ref: '#/components/schemas/BottomLine'
-    BottomLine:
-      type: object
-      properties:
-        total_review:
-          type: integer
-        average_score:
-          type: number
     BottomLineResponse:
       type: object
       properties:
@@ -180,6 +159,27 @@ components:
           format: date-time
         verified_buyer:
           type: boolean
+    BottomLine:
+      type: object
+      properties:
+        total_review:
+          type: integer
+        average_score:
+          type: number
+    ReviewsResponse:
+      type: object
+      properties:
+        status:
+          type: object
+        response:
+          type: object
+          properties:
+            reviews:
+              type: array
+              items:
+                $ref: '#/components/schemas/Review'
+            bottomline:
+              $ref: '#/components/schemas/BottomLine'
   securitySchemes:
     UToken:
       type: apiKey

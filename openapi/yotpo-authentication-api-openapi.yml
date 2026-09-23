@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
   title: Yotpo Authentication API
   description: Specification of Yotpo's e-commerce retention APIs covering reviews and user-generated content, loyalty and referrals, SMS, subscriptions (Core API), and email. Reviews/UGC, SMS, Email, and Core API requests are authenticated with an app key and an OAuth utoken obtained from the store secret; the Loyalty & Referrals API is authenticated with x-guid and x-api-key headers.
@@ -21,7 +21,7 @@ paths:
       operationId: createAccessToken
       tags:
       - Authentication
-      summary: Generate an OAuth access token (utoken).
+      summary: Generate an OAuth access token (utoken)
       description: Exchange your app key (store_id) and API secret for a short-lived utoken using the OAuth2 client-credentials grant. The utoken is passed on subsequent Reviews/UGC, SMS, Email, and Core API requests.
       requestBody:
         required: true
