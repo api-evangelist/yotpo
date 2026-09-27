@@ -108,6 +108,33 @@ paths:
                 $ref: '#/components/schemas/RedemptionOptionList'
 components:
   schemas:
+    RedemptionOption:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        points_cost:
+          type: integer
+    RedemptionRequest:
+      type: object
+      required:
+      - customer_email
+      - redemption_option_id
+      properties:
+        customer_email:
+          type: string
+          format: email
+        redemption_option_id:
+          type: integer
+    RedemptionResponse:
+      type: object
+      properties:
+        coupon_code:
+          type: string
+        points_deducted:
+          type: integer
     LoyaltyOrder:
       type: object
       required:
@@ -139,33 +166,6 @@ components:
           type: integer
         vip_tier_name:
           type: string
-    RedemptionRequest:
-      type: object
-      required:
-      - customer_email
-      - redemption_option_id
-      properties:
-        customer_email:
-          type: string
-          format: email
-        redemption_option_id:
-          type: integer
-    RedemptionOption:
-      type: object
-      properties:
-        id:
-          type: integer
-        name:
-          type: string
-        points_cost:
-          type: integer
-    RedemptionResponse:
-      type: object
-      properties:
-        coupon_code:
-          type: string
-        points_deducted:
-          type: integer
     RedemptionOptionList:
       type: object
       properties:

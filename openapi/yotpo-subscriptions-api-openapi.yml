@@ -138,18 +138,6 @@ paths:
           description: Created
 components:
   schemas:
-    Customer:
-      type: object
-      properties:
-        external_id:
-          type: string
-        email:
-          type: string
-          format: email
-        first_name:
-          type: string
-        last_name:
-          type: string
     Order:
       type: object
       properties:
@@ -183,6 +171,18 @@ components:
         filter_id:
           type: string
         event_name:
+          type: string
+    Customer:
+      type: object
+      properties:
+        external_id:
+          type: string
+        email:
+          type: string
+          format: email
+        first_name:
+          type: string
+        last_name:
           type: string
     Product:
       type: object
