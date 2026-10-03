@@ -103,55 +103,6 @@ paths:
                 $ref: '#/components/schemas/BottomLineResponse'
 components:
   schemas:
-    BottomLineResponse:
-      type: object
-      properties:
-        response:
-          type: object
-          properties:
-            bottomline:
-              $ref: '#/components/schemas/BottomLine'
-    ReviewsResponse:
-      type: object
-      properties:
-        status:
-          type: object
-        response:
-          type: object
-          properties:
-            reviews:
-              type: array
-              items:
-                $ref: '#/components/schemas/Review'
-            bottomline:
-              $ref: '#/components/schemas/BottomLine'
-    BottomLine:
-      type: object
-      properties:
-        total_review:
-          type: integer
-        average_score:
-          type: number
-    Review:
-      type: object
-      properties:
-        id:
-          type: integer
-        score:
-          type: integer
-        votes_up:
-          type: integer
-        votes_down:
-          type: integer
-        content:
-          type: string
-        title:
-          type: string
-        created_at:
-          type: string
-          format: date-time
-        verified_buyer:
-          type: boolean
     CreateReviewRequest:
       type: object
       required:
@@ -180,6 +131,55 @@ components:
           type: integer
           minimum: 1
           maximum: 5
+    BottomLine:
+      type: object
+      properties:
+        total_review:
+          type: integer
+        average_score:
+          type: number
+    ReviewsResponse:
+      type: object
+      properties:
+        status:
+          type: object
+        response:
+          type: object
+          properties:
+            reviews:
+              type: array
+              items:
+                $ref: '#/components/schemas/Review'
+            bottomline:
+              $ref: '#/components/schemas/BottomLine'
+    Review:
+      type: object
+      properties:
+        id:
+          type: integer
+        score:
+          type: integer
+        votes_up:
+          type: integer
+        votes_down:
+          type: integer
+        content:
+          type: string
+        title:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        verified_buyer:
+          type: boolean
+    BottomLineResponse:
+      type: object
+      properties:
+        response:
+          type: object
+          properties:
+            bottomline:
+              $ref: '#/components/schemas/BottomLine'
   securitySchemes:
     UToken:
       type: apiKey

@@ -117,6 +117,13 @@ components:
           type: string
         points_cost:
           type: integer
+    RedemptionResponse:
+      type: object
+      properties:
+        coupon_code:
+          type: string
+        points_deducted:
+          type: integer
     RedemptionRequest:
       type: object
       required:
@@ -127,13 +134,6 @@ components:
           type: string
           format: email
         redemption_option_id:
-          type: integer
-    RedemptionResponse:
-      type: object
-      properties:
-        coupon_code:
-          type: string
-        points_deducted:
           type: integer
     LoyaltyOrder:
       type: object

@@ -138,6 +138,20 @@ paths:
           description: Created
 components:
   schemas:
+    WebhookSubscriptionList:
+      type: object
+      properties:
+        webhook_subscriptions:
+          type: array
+          items:
+            $ref: '#/components/schemas/WebhookSubscription'
+    ProductList:
+      type: object
+      properties:
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/Product'
     Order:
       type: object
       properties:
@@ -149,20 +163,6 @@ components:
           type: string
         customer:
           $ref: '#/components/schemas/Customer'
-    ProductList:
-      type: object
-      properties:
-        products:
-          type: array
-          items:
-            $ref: '#/components/schemas/Product'
-    WebhookSubscriptionList:
-      type: object
-      properties:
-        webhook_subscriptions:
-          type: array
-          items:
-            $ref: '#/components/schemas/WebhookSubscription'
     WebhookSubscription:
       type: object
       properties:
