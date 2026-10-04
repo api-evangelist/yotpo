@@ -160,6 +160,9 @@ apis:
   - type: Documentation
     url: https://core-api.yotpo.com/reference
 common:
+- type: CapabilityMap
+  url: capabilities/yotpo-capability-edges.yml
+  name: Yotpo Business Capability Map
 - type: AgenticAccess
   url: agentic-access/yotpo-agentic-access.yml
 - type: TrustCenter
