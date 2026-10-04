@@ -117,39 +117,6 @@ components:
           type: string
         points_cost:
           type: integer
-    RedemptionResponse:
-      type: object
-      properties:
-        coupon_code:
-          type: string
-        points_deducted:
-          type: integer
-    RedemptionRequest:
-      type: object
-      required:
-      - customer_email
-      - redemption_option_id
-      properties:
-        customer_email:
-          type: string
-          format: email
-        redemption_option_id:
-          type: integer
-    LoyaltyOrder:
-      type: object
-      required:
-      - customer_email
-      - total_amount_cents
-      properties:
-        customer_email:
-          type: string
-          format: email
-        total_amount_cents:
-          type: integer
-        currency_code:
-          type: string
-        order_id:
-          type: string
     LoyaltyCustomer:
       type: object
       properties:
@@ -166,6 +133,13 @@ components:
           type: integer
         vip_tier_name:
           type: string
+    RedemptionResponse:
+      type: object
+      properties:
+        coupon_code:
+          type: string
+        points_deducted:
+          type: integer
     RedemptionOptionList:
       type: object
       properties:
@@ -173,6 +147,32 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RedemptionOption'
+    LoyaltyOrder:
+      type: object
+      required:
+      - customer_email
+      - total_amount_cents
+      properties:
+        customer_email:
+          type: string
+          format: email
+        total_amount_cents:
+          type: integer
+        currency_code:
+          type: string
+        order_id:
+          type: string
+    RedemptionRequest:
+      type: object
+      required:
+      - customer_email
+      - redemption_option_id
+      properties:
+        customer_email:
+          type: string
+          format: email
+        redemption_option_id:
+          type: integer
   securitySchemes:
     UToken:
       type: apiKey

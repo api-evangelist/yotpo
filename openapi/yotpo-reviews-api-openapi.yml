@@ -131,6 +131,14 @@ components:
           type: integer
           minimum: 1
           maximum: 5
+    BottomLineResponse:
+      type: object
+      properties:
+        response:
+          type: object
+          properties:
+            bottomline:
+              $ref: '#/components/schemas/BottomLine'
     BottomLine:
       type: object
       properties:
@@ -172,14 +180,6 @@ components:
           format: date-time
         verified_buyer:
           type: boolean
-    BottomLineResponse:
-      type: object
-      properties:
-        response:
-          type: object
-          properties:
-            bottomline:
-              $ref: '#/components/schemas/BottomLine'
   securitySchemes:
     UToken:
       type: apiKey
