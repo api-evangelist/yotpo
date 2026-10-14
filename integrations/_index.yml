@@ -346,7 +346,6 @@
   arazzo: null
 - slug: yotpo-microsoft-excel
   label: Microsoft Excel
-  partner: microsoft-excel
   partner_name: Microsoft Excel
   category: Microsoft
   type: marketplace
@@ -354,7 +353,7 @@
   channel: ipaas-usage
   evidence: https://zapier.com/apps/yotpo/integrations/excel
   source: edge
-  status: pending-generation
+  status: pending-partner-spec
   arazzo: null
 - slug: yotpo-hulkapps-form-builder
   label: HulkApps Form Builder
@@ -378,4 +377,28 @@
   evidence: https://zapier.com/apps/yotpo/integrations/attentive
   source: edge
   status: pending-generation
+  arazzo: null
+- slug: yotpo-twilio-segment
+  label: Twilio Segment
+  partner: segment
+  partner_name: Twilio Segment
+  type: coverage
+  marketplace: coverage
+  channel: partner-built
+  evidence: https://www.twilio.com/docs/segment/connections/sources/catalog/cloud-apps/yotpo
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: yotpo-mparticle
+  label: mParticle
+  partner: mparticle
+  partner_name: mParticle
+  type: coverage
+  marketplace: coverage
+  channel: partner-built
+  evidence: https://docs.mparticle.com/integrations/yotpo/feed/
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
   arazzo: null

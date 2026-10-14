@@ -4,8 +4,10 @@ source:
 - https://zapier.com/apps/yotpo/integrations
 checked:
 - https://composio.dev/toolkits/yotpo
+- https://docs.mparticle.com/integrations/yotpo/feed/
 - https://monid.ai/tools/yotpo
 - https://n8n.io/integrations/yotpo/
+- https://www.twilio.com/docs/segment/connections/sources/catalog/cloud-apps/yotpo
 - https://zapier.com/apps/yotpo/integrations
 summary: null
 marketplace_apps:
@@ -363,6 +365,42 @@ edges:
   direction: third-party
   category: Marketing
   partner_url: https://www.attentivemobile.com/
+- partner_name: Twilio Segment
+  partner: segment
+  partner_match: aggregator
+  marketplace: coverage
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: connector-coverage
+  evidence: https://www.twilio.com/docs/segment/connections/sources/catalog/cloud-apps/yotpo
+  coverage_role:
+  - source
+  cdp_signals:
+    source:
+      catalog_entries:
+      - yotpo
+  detected_by: sweep-cdp.py
+  first_seen: '2026-10-14'
+- partner_name: mParticle
+  partner: mparticle
+  partner_match: aggregator
+  marketplace: coverage
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: connector-coverage
+  evidence: https://docs.mparticle.com/integrations/yotpo/feed/
+  coverage_role:
+  - source
+  cdp_signals:
+    source:
+      catalog_entries:
+      - yotpo
+      integration_types:
+      - feed
+  detected_by: sweep-cdp.py
+  first_seen: '2026-10-14'
 templates:
 - title: Update customer profile properties in Yotpo for new form submissions in Customer Fields
   url: https://zapier.com/apps/customer-fields/integrations/yotpo/1709520/update-customer-profile-properties-in-yotpo-for-new-form-submissions-in-customer-fields
