@@ -8,6 +8,7 @@ checked:
 - https://monid.ai/tools/yotpo
 - https://n8n.io/integrations/yotpo/
 - https://www.twilio.com/docs/segment/connections/sources/catalog/cloud-apps/yotpo
+- https://zapier.com/api/v4/apps/
 - https://zapier.com/apps/yotpo/integrations
 - shopify/integrations/shopify-integration-edges.yml
 summary: null
@@ -420,6 +421,31 @@ edges:
   detected_by: mirror-platform-listings.py
   publisher_verified:
   - Built for Shopify
+- partner_name: Zapier
+  partner: zapier
+  partner_match: aggregator
+  type: marketplace
+  marketplace: zapier-directory
+  channel: ipaas-listing
+  relationship: ipaas-bridge
+  direction: third-party
+  evidence: https://zapier.com/apps/yotpo/integrations
+  category: null
+  contract_reference:
+    register: Zapier app directory (zapier.com/api/v4/apps)
+    spec_file: null
+    role: ipaas-connector:zapier
+    registered_name: Yotpo
+    matched_domain: yotpo.com
+    matched_by: domain
+    detected_by: sweep-workflow-automation.py
+    detected: '2026-10-15'
+    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
+    app_slug: yotpo
+    beta: false
+    builder: unknown (not in the directory record)
+  detected_by: sweep-workflow-automation.py
+  first_seen: '2026-10-15'
 templates:
 - title: Update customer profile properties in Yotpo for new form submissions in Customer Fields
   url: https://zapier.com/apps/customer-fields/integrations/yotpo/1709520/update-customer-profile-properties-in-yotpo-for-new-form-submissions-in-customer-fields
