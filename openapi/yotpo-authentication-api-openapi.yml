@@ -38,14 +38,6 @@ paths:
                 $ref: '#/components/schemas/TokenResponse'
 components:
   schemas:
-    TokenResponse:
-      type: object
-      properties:
-        access_token:
-          type: string
-        token_type:
-          type: string
-          example: bearer
     TokenRequest:
       type: object
       required:
@@ -62,6 +54,14 @@ components:
         grant_type:
           type: string
           example: client_credentials
+    TokenResponse:
+      type: object
+      properties:
+        access_token:
+          type: string
+        token_type:
+          type: string
+          example: bearer
   securitySchemes:
     UToken:
       type: apiKey

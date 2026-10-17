@@ -108,14 +108,12 @@ paths:
                 $ref: '#/components/schemas/RedemptionOptionList'
 components:
   schemas:
-    RedemptionOption:
+    RedemptionResponse:
       type: object
       properties:
-        id:
-          type: integer
-        name:
+        coupon_code:
           type: string
-        points_cost:
+        points_deducted:
           type: integer
     LoyaltyCustomer:
       type: object
@@ -133,20 +131,17 @@ components:
           type: integer
         vip_tier_name:
           type: string
-    RedemptionResponse:
+    RedemptionRequest:
       type: object
+      required:
+      - customer_email
+      - redemption_option_id
       properties:
-        coupon_code:
+        customer_email:
           type: string
-        points_deducted:
+          format: email
+        redemption_option_id:
           type: integer
-    RedemptionOptionList:
-      type: object
-      properties:
-        redemption_options:
-          type: array
-          items:
-            $ref: '#/components/schemas/RedemptionOption'
     LoyaltyOrder:
       type: object
       required:
@@ -162,16 +157,21 @@ components:
           type: string
         order_id:
           type: string
-    RedemptionRequest:
+    RedemptionOptionList:
       type: object
-      required:
-      - customer_email
-      - redemption_option_id
       properties:
-        customer_email:
+        redemption_options:
+          type: array
+          items:
+            $ref: '#/components/schemas/RedemptionOption'
+    RedemptionOption:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
           type: string
-          format: email
-        redemption_option_id:
+        points_cost:
           type: integer
   securitySchemes:
     UToken:
