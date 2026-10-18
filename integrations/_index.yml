@@ -467,7 +467,7 @@
     - alpha
     in_cloud: true
     builder: unknown (community connector; contributor not in the record)
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: yotpo-fivetran
   label: Fivetran
@@ -493,7 +493,7 @@
     - connectors/applications/yotpo
     vendor_link: https://www.yotpo.com/
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: yotpo-meltano
   label: Meltano
@@ -528,5 +528,5 @@
     - silver
     - unknown
     builder: 'community (Meltano Hub variant maintainers: bombas, dbt-labs, flopotok, singer-io, stvhanna)'
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
