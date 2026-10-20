@@ -14,6 +14,7 @@
   evidence: https://zapier.com/apps/customer-fields/integrations/yotpo/1709520/update-customer-profile-properties-in-yotpo-for-new-form-submissions-in-customer-fields
   template: https://zapier.com/apps/customer-fields/integrations/yotpo/1709520/update-customer-profile-properties-in-yotpo-for-new-form-submissions-in-customer-fields
   source: template
+  relationship: ipaas-bridge
   status: pending-partner-spec
   arazzo: null
 - slug: yotpo-add-new-yotpo-email-subscribers-to-airtable-as-records
@@ -28,6 +29,7 @@
   evidence: https://zapier.com/apps/airtable/integrations/yotpo/1691338/add-new-yotpo-email-subscribers-to-airtable-as-records
   template: https://zapier.com/apps/airtable/integrations/yotpo/1691338/add-new-yotpo-email-subscribers-to-airtable-as-records
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: yotpo-unsubscribe-customers-from-hubspot-when-they-unsubscribe-from-yotpo
@@ -42,6 +44,7 @@
   evidence: https://zapier.com/apps/hubspot/integrations/yotpo/1701026/unsubscribe-customers-from-hubspot-when-they-unsubscribe-from-yotpo
   template: https://zapier.com/apps/hubspot/integrations/yotpo/1701026/unsubscribe-customers-from-hubspot-when-they-unsubscribe-from-yotpo
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: yotpo-create-yotpo-subscribers-from-new-jotform-submissions
@@ -56,6 +59,7 @@
   evidence: https://zapier.com/apps/jotform/integrations/yotpo/1710413/create-yotpo-subscribers-from-new-jotform-submissions
   template: https://zapier.com/apps/jotform/integrations/yotpo/1710413/create-yotpo-subscribers-from-new-jotform-submissions
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: yotpo-create-yotpo-events-from-new-jotform-submissions
@@ -70,349 +74,8 @@
   evidence: https://zapier.com/apps/jotform/integrations/yotpo/1710414/create-yotpo-events-from-new-jotform-submissions
   template: https://zapier.com/apps/jotform/integrations/yotpo/1710414/create-yotpo-events-from-new-jotform-submissions
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
-  arazzo: null
-- slug: yotpo-shopify
-  label: Shopify
-  partner: shopify
-  partner_name: Shopify
-  category: eCommerce
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/shopify
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: yotpo-typeform
-  label: Typeform
-  partner: typeform
-  partner_name: Typeform
-  category: Forms & Surveys
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/typeform
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: yotpo-klaviyo
-  label: Klaviyo
-  partner: klaviyo
-  partner_name: Klaviyo
-  category: Marketing Automation
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/klaviyo
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: yotpo-manychat
-  label: Manychat
-  partner: manychat
-  partner_name: Manychat
-  category: Social Media Marketing
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/manychat
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: yotpo-customers-ai
-  label: Customers.ai
-  partner_name: Customers.ai
-  category: Marketing Automation
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/customersai
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: yotpo-mailchimp
-  label: Mailchimp
-  partner: mailchimp
-  partner_name: Mailchimp
-  category: Marketing Automation
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/mailchimp
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: yotpo-leadconnector
-  label: LeadConnector
-  partner_name: LeadConnector
-  category: Marketing Automation
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/leadconnector
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: yotpo-kartra
-  label: Kartra
-  partner: kartra
-  partner_name: Kartra
-  category: Marketing Automation
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/kartra
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: yotpo-facebook-lead-ads
-  label: Facebook Lead Ads
-  partner: facebook-lead-ads
-  partner_name: Facebook Lead Ads
-  category: Ads & Conversion
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/facebook-lead-ads
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: yotpo-drip
-  label: Drip
-  partner: drip
-  partner_name: Drip
-  category: Drip Emails
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/drip
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: yotpo-lantern
-  label: Lantern
-  partner: lantern
-  partner_name: Lantern
-  category: Commerce
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/lantern
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: yotpo-google-sheets
-  label: Google Sheets
-  partner: google-sheets
-  partner_name: Google Sheets
-  category: Google
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/google-sheets
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: yotpo-brevo
-  label: Brevo
-  partner: brevo
-  partner_name: Brevo
-  category: Email Newsletters
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/brevo
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: yotpo-google-forms
-  label: Google Forms
-  partner: google-forms
-  partner_name: Google Forms
-  category: Forms & Surveys
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/google-forms
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: yotpo-google-ads
-  label: Google Ads
-  partner: google-ads
-  partner_name: Google Ads
-  category: Ads & Conversion
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/google-ads
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: yotpo-woocommerce
-  label: WooCommerce
-  partner: woocommerce
-  partner_name: WooCommerce
-  category: eCommerce
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/woocommerce
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: yotpo-shipstation
-  label: ShipStation
-  partner: shipstation
-  partner_name: ShipStation
-  category: eCommerce
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/shipstation
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: yotpo-recharge
-  label: Recharge
-  partner: recharge-payments
-  partner_name: Recharge
-  category: eCommerce
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/recharge
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: yotpo-octane-ai
-  label: Octane AI
-  partner: octane-ai
-  partner_name: Octane AI
-  category: Marketing Automation
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/octane-ai
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: yotpo-funnelish
-  label: Funnelish
-  partner_name: Funnelish
-  category: eCommerce
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/funnelish
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: yotpo-ometria
-  label: Ometria
-  partner_name: Ometria
-  category: Marketing Automation
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/ometria
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: yotpo-slack
-  label: Slack
-  partner: slack
-  partner_name: Slack
-  category: Team Chat
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/slack
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: yotpo-pipedrive
-  label: Pipedrive
-  partner: pipedrive
-  partner_name: Pipedrive
-  category: CRM (Customer Relationship Management)
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/pipedrive
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: yotpo-microsoft-excel
-  label: Microsoft Excel
-  partner_name: Microsoft Excel
-  category: Microsoft
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/excel
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: yotpo-hulkapps-form-builder
-  label: HulkApps Form Builder
-  partner_name: HulkApps Form Builder
-  category: App Builder
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/hulkapps-form-builder
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: yotpo-attentive
-  label: Attentive
-  partner: attentive
-  partner_name: Attentive
-  category: Marketing
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/yotpo/integrations/attentive
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: yotpo-twilio-segment
-  label: Twilio Segment
-  partner: segment
-  partner_name: Twilio Segment
-  type: coverage
-  marketplace: coverage
-  channel: partner-built
-  evidence: https://www.twilio.com/docs/segment/connections/sources/catalog/cloud-apps/yotpo
-  source: edge
-  relationship: connector-coverage
-  status: not-a-workflow
-  arazzo: null
-- slug: yotpo-mparticle
-  label: mParticle
-  partner: mparticle
-  partner_name: mParticle
-  type: coverage
-  marketplace: coverage
-  channel: partner-built
-  evidence: https://docs.mparticle.com/integrations/yotpo/feed/
-  source: edge
-  relationship: connector-coverage
-  status: not-a-workflow
-  arazzo: null
-- slug: yotpo-shopify-own
-  label: Shopify (own)
-  partner: shopify
-  partner_name: Shopify (own)
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://apps.shopify.com/yotpo-social-reviews
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
   arazzo: null
 - slug: yotpo-zapier
   label: Zapier
@@ -437,6 +100,30 @@
     app_slug: yotpo
     beta: false
     builder: unknown (not in the directory record)
+  status: not-a-workflow
+  arazzo: null
+- slug: yotpo-twilio-segment
+  label: Twilio Segment
+  partner: segment
+  partner_name: Twilio Segment
+  type: coverage
+  marketplace: coverage
+  channel: partner-built
+  evidence: https://www.twilio.com/docs/segment/connections/sources/catalog/cloud-apps/yotpo
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: yotpo-mparticle
+  label: mParticle
+  partner: mparticle
+  partner_name: mParticle
+  type: coverage
+  marketplace: coverage
+  channel: partner-built
+  evidence: https://docs.mparticle.com/integrations/yotpo/feed/
+  source: edge
+  relationship: connector-coverage
   status: not-a-workflow
   arazzo: null
 - slug: yotpo-airbyte
@@ -529,4 +216,390 @@
     - unknown
     builder: 'community (Meltano Hub variant maintainers: bombas, dbt-labs, flopotok, singer-io, stvhanna)'
   status: not-a-workflow
+  arazzo: null
+- slug: yotpo-shopify-own
+  label: Shopify (own)
+  partner: shopify
+  partner_name: Shopify (own)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://apps.shopify.com/yotpo-social-reviews
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: yotpo-wordpress-own
+  label: WordPress (own)
+  partner: wordpress
+  partner_name: WordPress (own)
+  category: WordPress plugin
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://wordpress.org/plugins/yotpo-social-reviews-for-woocommerce/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: yotpo-cloud-security-alliance-star-registry
+  label: Cloud Security Alliance STAR Registry
+  partner_name: Cloud Security Alliance STAR Registry
+  category: Cloud security assurance
+  type: register
+  channel: standard-directory
+  evidence: https://cloudsecurityalliance.org/star/registry/yotpo/services/yotpo-reviews-ugc-loyalty-and-referrals
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: CSA STAR Registry (cloudsecurityalliance.org/star/registry)
+    spec_file: null
+    standard: CSA STAR
+    role: star-level-1
+    registered_name: Yotpo
+    registry_id: yotpo
+    service_url: https://www.yotpo.com
+    matched_domain: yotpo.com
+    matched_by: domain
+    identity_source: the service URL the organisation filed on its STAR listing (no lookup)
+    levels:
+    - STAR Level 1
+    certified_products: []
+    signal_note: STAR Level 1 (CAIQ self-assessment) = participation; certified_products = one entry per STAR Level
+      2 / STAR for AI Level 2 assessment TYPE (third-party certification, attestation, C-STAR, ValidAIted); lapsed
+      = every instance marked (Deprecated) by the registry; service counts never recorded
+    detected_by: sweep-compliance-assurance.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
+- slug: yotpo-shopify
+  label: Shopify
+  partner: shopify
+  partner_name: Shopify
+  category: eCommerce
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/shopify
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: yotpo-typeform
+  label: Typeform
+  partner: typeform
+  partner_name: Typeform
+  category: Forms & Surveys
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/typeform
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: yotpo-klaviyo
+  label: Klaviyo
+  partner: klaviyo
+  partner_name: Klaviyo
+  category: Marketing Automation
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/klaviyo
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: yotpo-manychat
+  label: Manychat
+  partner: manychat
+  partner_name: Manychat
+  category: Social Media Marketing
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/manychat
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: yotpo-customers-ai
+  label: Customers.ai
+  partner_name: Customers.ai
+  category: Marketing Automation
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/customersai
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: yotpo-mailchimp
+  label: Mailchimp
+  partner: mailchimp
+  partner_name: Mailchimp
+  category: Marketing Automation
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/mailchimp
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: yotpo-leadconnector
+  label: LeadConnector
+  partner_name: LeadConnector
+  category: Marketing Automation
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/leadconnector
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: yotpo-kartra
+  label: Kartra
+  partner: kartra
+  partner_name: Kartra
+  category: Marketing Automation
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/kartra
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: yotpo-facebook-lead-ads
+  label: Facebook Lead Ads
+  partner: facebook-lead-ads
+  partner_name: Facebook Lead Ads
+  category: Ads & Conversion
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/facebook-lead-ads
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: yotpo-drip
+  label: Drip
+  partner: drip
+  partner_name: Drip
+  category: Drip Emails
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/drip
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: yotpo-lantern
+  label: Lantern
+  partner: lantern
+  partner_name: Lantern
+  category: Commerce
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/lantern
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: yotpo-google-sheets
+  label: Google Sheets
+  partner: google-sheets
+  partner_name: Google Sheets
+  category: Google
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/google-sheets
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: yotpo-brevo
+  label: Brevo
+  partner: brevo
+  partner_name: Brevo
+  category: Email Newsletters
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/brevo
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: yotpo-google-forms
+  label: Google Forms
+  partner: google-forms
+  partner_name: Google Forms
+  category: Forms & Surveys
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/google-forms
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: yotpo-google-ads
+  label: Google Ads
+  partner: google-ads
+  partner_name: Google Ads
+  category: Ads & Conversion
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/google-ads
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: yotpo-woocommerce
+  label: WooCommerce
+  partner: woocommerce
+  partner_name: WooCommerce
+  category: eCommerce
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/woocommerce
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: yotpo-shipstation
+  label: ShipStation
+  partner: shipstation
+  partner_name: ShipStation
+  category: eCommerce
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/shipstation
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: yotpo-recharge
+  label: Recharge
+  partner: recharge-payments
+  partner_name: Recharge
+  category: eCommerce
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/recharge
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: yotpo-octane-ai
+  label: Octane AI
+  partner: octane-ai
+  partner_name: Octane AI
+  category: Marketing Automation
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/octane-ai
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: yotpo-funnelish
+  label: Funnelish
+  partner_name: Funnelish
+  category: eCommerce
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/funnelish
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: yotpo-ometria
+  label: Ometria
+  partner_name: Ometria
+  category: Marketing Automation
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/ometria
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: yotpo-slack
+  label: Slack
+  partner: slack
+  partner_name: Slack
+  category: Team Chat
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/slack
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: yotpo-microsoft-excel
+  label: Microsoft Excel
+  partner_name: Microsoft Excel
+  category: Microsoft
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/excel
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: yotpo-hulkapps-form-builder
+  label: HulkApps Form Builder
+  partner_name: HulkApps Form Builder
+  category: App Builder
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/hulkapps-form-builder
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: yotpo-attentive
+  label: Attentive
+  partner: attentive
+  partner_name: Attentive
+  category: Marketing
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/attentive
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: yotpo-scribeless
+  label: Scribeless
+  partner_name: Scribeless
+  category: Marketing Automation
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/yotpo/integrations/scribeless
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
   arazzo: null
