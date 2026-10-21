@@ -22,6 +22,7 @@ checked:
 - https://www.yotpo.com/integrations/
 - bigcommerce/integrations/bigcommerce-integration-edges.yml
 - salesforce-commerce-cloud/integrations/salesforce-commerce-cloud-integration-edges.yml
+- hubspot/integrations/hubspot-integration-edges.yml
 summary: null
 marketplace_apps:
 - marketplace: zapier
@@ -2146,6 +2147,24 @@ edges:
   detected: '2026-10-20'
   detected_by: mirror-platform-listings.py
   category: eCommerce, marketing, marketingAutomation
+- partner_name: HubSpot (own)
+  partner: hubspot
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://ecosystem.hubspot.com/marketplace/listing/yotpo-loyalty
+  mirror_of: hubspot/integrations/hubspot-integration-edges.yml
+  apps:
+  - Yotpo Loyalty
+  - Yotpo Reviews & Visual UGC
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: E_COMMERCE
 templates:
 - title: Update customer profile properties in Yotpo for new form submissions in Customer Fields
   url: https://zapier.com/apps/customer-fields/integrations/yotpo/1709520/update-customer-profile-properties-in-yotpo-for-new-form-submissions-in-customer-fields
