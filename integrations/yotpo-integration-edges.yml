@@ -19,6 +19,7 @@ checked:
 - https://zapier.com/apps/yotpo/integrations
 - shopify/integrations/shopify-integration-edges.yml
 - wordpress/integrations/wordpress-integration-edges.yml
+- https://www.yotpo.com/integrations/
 summary: null
 marketplace_apps:
 - marketplace: zapier
@@ -44,6 +45,14 @@ marketplace_apps:
   - key: subscriber
     label: Update Subscriber Status
   searches: []
+- marketplace: own
+  channel: partner-built
+  app: yotpo
+  url: https://www.yotpo.com/integrations/
+  app_count: 177
+  adapter: sweep-reviews-ugc.py:listing-pages
+  listed: 53
+  note: 177 listings read; only domain- / identity-linked partners are written
 edges:
 - partner_name: Zapier
   partner: zapier
@@ -622,6 +631,1483 @@ edges:
   direction: third-party
   category: Marketing Automation
   partner_url: https://scribeless.co/
+- partner_name: AdRoll
+  app: AdRoll
+  partner: adroll
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/adroll/
+  category: Reviews & UGC
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: AdRoll
+    matched_domain: adroll.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - AdRoll
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+    identity: 'wikidata P856 (labelled provenance step): wikidata Q17509872 ''AdRoll'' P856 http://www.adroll.com/'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Aftership
+  app: AfterShip Personalization
+  partner: aftership
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/aftership-personalization/
+  category: null
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Aftership
+    matched_domain: aftership.com
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - AfterShip Personalization
+    - AfterShip Tracking
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: listing's own Resources link to the developer's docs (automizely.com, aftership.com)
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Akeneo
+  app: Akeneo
+  partner: akeneo
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/akeneo/
+  category: null
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Akeneo
+    matched_domain: akeneo.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Akeneo
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: listing's own Resources link to the developer's docs (akeneo.com)
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: BlueConic
+  app: BlueConic
+  partner: blueconic
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/blueconic/
+  category: null
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: BlueConic
+    matched_domain: blueconic.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - BlueConic
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: listing's own Resources link to the developer's docs (blueconic.com)
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Builder.io
+  app: Builder.io
+  partner: builder-io
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/builder-io/
+  category: null
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Builder.io
+    matched_domain: builder.io
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Builder.io
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: listing's own Resources link to the developer's docs (builder.io)
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: DataGrail
+  app: DataGrail
+  partner: datagrail
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/datagrail/
+  category: null
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: DataGrail
+    matched_domain: datagrail.io
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - DataGrail
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+    identity: 'wikidata P856 (labelled provenance step): wikidata Q118390931 ''DataGrail, Inc.'' P856 https://www.datagrail.io/'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Digioh
+  app: Digioh
+  partner: digioh
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/digioh/
+  category: null
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Digioh
+    matched_domain: digioh.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Digioh
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: listing's own Resources link to the developer's docs (digioh.com)
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Drip
+  app: Drip
+  partner: drip
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/drip/
+  category: null
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Drip
+    matched_domain: drip.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Drip
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: listing's own Resources link to the developer's docs (drip.com)
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Klaviyo
+  app: Klaviyo
+  partner: klaviyo
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/klaviyo-customer-hub/
+  category: Loyalty & Referrals
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Klaviyo
+    matched_domain: klaviyo.com
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - Klaviyo
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+    identity: 'wikidata P856 (labelled provenance step): wikidata Q106631196 ''Klaviyo'' P856 https://www.klaviyo.com/fr/'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: LoudCrowd
+  app: LoudCrowd
+  partner: loudcrowd
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/loudcrowd/
+  category: null
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: LoudCrowd
+    matched_domain: loudcrowd.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - LoudCrowd
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: listing's own Resources link to the developer's docs (loudcrowd.com)
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Mailchimp
+  app: Mailchimp
+  partner: mailchimp
+  partner_match: domain+name-among-holders
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/mailchimp-loyalty/
+  category: Loyalty & Referrals
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Mailchimp
+    matched_domain: mailchimp.com
+    matched_by: domain+name-among-holders
+    listings: 2
+    sample_apps:
+    - Mailchimp
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+    identity: 'wikidata P856 (labelled provenance step): wikidata Q6735673 ''Mailchimp'' P856 https://mailchimp.com/'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Omnisend
+  app: Omnisend
+  partner: omnisend
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  relationship: platform-app
+  direction: unknown
+  evidence: https://www.yotpo.com/integrations/omnisend-loyalty/
+  category: Loyalty & Referrals
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-listing-builder-unknown
+    registered_name: Omnisend
+    matched_domain: omnisend.com
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - Omnisend
+    signal_note: 'builder not shown on the listing: direction unknown, kept out of position shares; one edge per
+      (partner, platform)'
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+    identity: 'wikidata P856 (labelled provenance step): wikidata Q108440218 ''Omnisend'' P856 https://www.omnisend.com/'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Order Desk
+  app: Order Desk
+  partner: orderdesk
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/order-desk/
+  category: null
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Order Desk
+    matched_domain: orderdesk.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Order Desk
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: listing's own Resources link to the developer's docs (orderdesk.com)
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Refersion
+  app: Refersion
+  partner: refersion
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/refersion/
+  category: null
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Refersion
+    matched_domain: refersion.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Refersion
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: listing's own Resources link to the developer's docs (refersion.com)
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Shogun
+  app: Shogun
+  partner: shogun
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/shogun/
+  category: null
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Shogun
+    matched_domain: getshogun.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Shogun
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: listing's own Resources link to the developer's docs (getshogun.com)
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Shopify
+  app: Shopify
+  partner: shopify
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  relationship: platform-app
+  direction: unknown
+  evidence: https://www.yotpo.com/integrations/shopify-loyalty/
+  category: Loyalty & Referrals
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-listing-builder-unknown
+    registered_name: Shopify
+    matched_domain: shopify.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Shopify
+    signal_note: 'builder not shown on the listing: direction unknown, kept out of position shares; one edge per
+      (partner, platform)'
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+    identity: 'wikidata P856 (labelled provenance step): wikidata Q7501150 ''Shopify'' P856 https://www.shopify.com'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Talkable
+  app: Talkable
+  partner: talkable
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/talkable/
+  category: null
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Talkable
+    matched_domain: talkable.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Talkable
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: listing's own Resources link to the developer's docs (talkable.com)
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: TikTok
+  app: TikTok Shop
+  partner: tiktok
+  partner_match: domain+name-among-holders
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/tiktok-shop/
+  category: Reviews & UGC
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: TikTok
+    matched_domain: tiktok.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - TikTok Shop
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+    identity: 'wikidata P856 (labelled provenance step): wikidata Q48938223 ''TikTok'' P856 https://tiktok.com'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Triple Whale
+  app: Triple Whale
+  partner: triple-whale
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/triple-whale/
+  category: null
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Triple Whale
+    matched_domain: triplewhale.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Triple Whale
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: listing's own Resources link to the developer's docs (triplewhale.com)
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Weglot
+  app: Weglot
+  partner: weglot
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/weglot/
+  category: null
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Weglot
+    matched_domain: weglot.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Weglot
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: listing's own Resources link to the developer's docs (weglot.com)
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Wonderment
+  app: Wonderment
+  partner: wonderment
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/wonderment/
+  category: null
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Wonderment
+    matched_domain: wonderment.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Wonderment
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: listing's own Resources link to the developer's docs (wonderment.com)
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Optimizely (Zaius)
+  app: Optimizely (Zaius)
+  partner: zaius
+  partner_match: domain+name-among-holders
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  relationship: platform-app
+  direction: unknown
+  evidence: https://www.yotpo.com/integrations/optimizely-loyalty/
+  category: Loyalty & Referrals
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-listing-builder-unknown
+    registered_name: Optimizely (Zaius)
+    matched_domain: optimizely.com
+    matched_by: domain+name-among-holders
+    listings: 2
+    sample_apps:
+    - Optimizely (Zaius)
+    signal_note: 'builder not shown on the listing: direction unknown, kept out of position shares; one edge per
+      (partner, platform)'
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+    identity: 'wikidata P856 (labelled provenance step): wikidata Q17073302 ''Optimizely'' P856 https://www.optimizely.com/'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Bazaarvoice
+  app: Bazaarvoice
+  partner: bazaarvoice
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://www.yotpo.com/integrations/bazaarvoice/
+  category: Reviews & UGC
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-provider-built-app
+    registered_name: null
+    matched_domain: bazaarvoice.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Bazaarvoice
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+    identity: 'wikidata P856 (labelled provenance step): wikidata Q812651 ''Bazaarvoice'' P856 http://www.bazaarvoice.com/'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Braze
+  app: Braze
+  partner: braze
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://www.yotpo.com/integrations/braze/
+  category: null
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-provider-built-app
+    registered_name: null
+    matched_domain: braze.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Braze
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: listing's own Resources link to the developer's docs (braze.com)
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Klaviyo
+  app: Klaviyo
+  partner: klaviyo
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://www.yotpo.com/integrations/klaviyo/
+  category: Reviews & UGC
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-provider-built-app
+    registered_name: null
+    matched_domain: klaviyo.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Klaviyo
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+    identity: 'wikidata P856 (labelled provenance step): wikidata Q106631196 ''Klaviyo'' P856 https://www.klaviyo.com/fr/'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: PowerReviews
+  app: PowerReviews
+  partner: powerreviews
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://www.yotpo.com/integrations/powerreviews/
+  category: null
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-provider-built-app
+    registered_name: null
+    matched_domain: powerreviews.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - PowerReviews
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: listing's own Resources link to the developer's docs (powerreviews.com)
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Shopify
+  app: Shopify
+  partner: shopify
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://www.yotpo.com/integrations/shopify/
+  category: Reviews & UGC
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-provider-built-app
+    registered_name: null
+    matched_domain: shopify.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Shopify
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+    identity: 'wikidata P856 (labelled provenance step): wikidata Q7501150 ''Shopify'' P856 https://www.shopify.com'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: WooCommerce
+  app: WooCommerce
+  partner: woocommerce
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://www.yotpo.com/integrations/woocommerce/
+  category: Reviews & UGC
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-provider-built-app
+    registered_name: null
+    matched_domain: woocommerce.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - WooCommerce
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+    identity: 'wikidata P856 (labelled provenance step): wikidata Q15855099 ''WooCommerce'' P856 https://woocommerce.com/'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Adobe Commerce
+  app: Adobe Commerce
+  partner: adobe-commerce
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://www.yotpo.com/integrations/adobe-commerce-magento/
+  category: Reviews & UGC
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-provider-built-app
+    registered_name: Adobe Commerce
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Adobe Commerce
+    register_name_note: register-name 'adobecommerce' = adobe-commerce; no wikidata P856
+    signal_note: one edge per (builder, platform); listings are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Antavo
+  app: Antavo
+  partner: antavo
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/antavo/
+  category: Reviews & UGC
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Antavo
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Antavo
+    register_name_note: register-name 'antavo' = antavo; no wikidata P856
+    signal_note: one edge per (builder, platform); listings are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Attentive
+  app: Attentive
+  partner: attentive
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  relationship: platform-app
+  direction: unknown
+  evidence: https://www.yotpo.com/integrations/attentive-loyalty/
+  category: Loyalty & Referrals
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-listing-builder-unknown
+    registered_name: Attentive
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Attentive
+    register_name_note: register-name 'attentive' = attentive; no wikidata P856
+    signal_note: 'builder not shown on the listing: direction unknown, kept out of position shares; one edge per
+      (partner, platform)'
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Bold Commerce
+  app: Bold Commerce
+  partner: bold-commerce
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/bold-commerce/
+  category: Reviews & UGC
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Bold Commerce
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Bold Commerce
+    register_name_note: register-name 'boldcommerce' = bold-commerce; no wikidata P856
+    signal_note: one edge per (builder, platform); listings are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Dixa
+  app: Dixa
+  partner: dixa
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/dixa-loyalty/
+  category: Loyalty & Referrals
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Dixa
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Dixa
+    register_name_note: register-name 'dixa' = dixa; no wikidata P856
+    signal_note: one edge per (builder, platform); listings are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Dotdigital
+  app: Dotdigital
+  partner: dotdigital
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/dotdigital-loyalty/
+  category: Loyalty & Referrals
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Dotdigital
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Dotdigital
+    register_name_note: register-name 'dotdigital' = dotdigital; no wikidata P856
+    signal_note: one edge per (builder, platform); listings are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: EcoCart
+  app: EcoCart
+  partner: ecocart
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/ecocart/
+  category: null
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: EcoCart
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - EcoCart
+    register_name_note: register-name 'ecocart' = ecocart; no wikidata P856
+    signal_note: one edge per (builder, platform); listings are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Gladly
+  app: Gladly
+  partner: gladly
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/gladly-loyalty/
+  category: Loyalty & Referrals
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Gladly
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Gladly
+    register_name_note: register-name 'gladly' = gladly; no wikidata P856
+    signal_note: one edge per (builder, platform); listings are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Gorgias
+  app: Gorgias
+  partner: gorgias
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  relationship: platform-app
+  direction: unknown
+  evidence: https://www.yotpo.com/integrations/gorgias-loyalty/
+  category: Loyalty & Referrals
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-listing-builder-unknown
+    registered_name: Gorgias
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Gorgias
+    register_name_note: register-name 'gorgias' = gorgias; no wikidata P856
+    signal_note: 'builder not shown on the listing: direction unknown, kept out of position shares; one edge per
+      (partner, platform)'
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Instagram
+  app: Instagram
+  partner: instagram
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://www.yotpo.com/integrations/instagram/
+  category: Reviews & UGC
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-provider-built-app
+    registered_name: Instagram
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Instagram
+    register_name_note: register-name 'instagram' = instagram; wikidata P856 instagram.com agrees or unheld
+    signal_note: one edge per (builder, platform); listings are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Judge.me
+  app: Judge.me
+  partner: judge-me
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/judge-me/
+  category: null
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Judge.me
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Judge.me
+    register_name_note: register-name 'judgeme' = judge-me; no wikidata P856
+    signal_note: one edge per (builder, platform); listings are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Listrak
+  app: Listrak
+  partner: listrak
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  relationship: platform-app
+  direction: unknown
+  evidence: https://www.yotpo.com/integrations/listrak-loyalty/
+  category: Loyalty & Referrals
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-listing-builder-unknown
+    registered_name: Listrak
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Listrak
+    register_name_note: register-name 'listrak' = listrak; no wikidata P856
+    signal_note: 'builder not shown on the listing: direction unknown, kept out of position shares; one edge per
+      (partner, platform)'
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: LoyaltyLion
+  app: LoyaltyLion
+  partner: loyaltylion
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/loyaltylion/
+  category: Reviews & UGC
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: LoyaltyLion
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - LoyaltyLion
+    register_name_note: register-name 'loyaltylion' = loyaltylion; no wikidata P856
+    signal_note: one edge per (builder, platform); listings are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Movable Ink
+  app: Movable Ink
+  partner: movable-ink
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/movable-ink/
+  category: null
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Movable Ink
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Movable Ink
+    register_name_note: register-name 'movableink' = movable-ink; no wikidata P856
+    signal_note: one edge per (builder, platform); listings are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Ordergroove
+  app: Ordergroove
+  partner: ordergroove
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://www.yotpo.com/integrations/ordergroove/
+  category: null
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-provider-built-app
+    registered_name: Ordergroove
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Ordergroove
+    register_name_note: register-name 'ordergroove' = ordergroove; no wikidata P856
+    signal_note: one edge per (builder, platform); listings are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Plobal Apps
+  app: Plobal Apps
+  partner: plobal-apps
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/plobal-apps/
+  category: Reviews & UGC
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Plobal Apps
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Plobal Apps
+    register_name_note: register-name 'plobalapps' = plobal-apps; no wikidata P856
+    signal_note: one edge per (builder, platform); listings are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Postscript
+  app: Postscript
+  partner: postscript
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  relationship: platform-app
+  direction: unknown
+  evidence: https://www.yotpo.com/integrations/postscript/
+  category: Loyalty & Referrals
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-listing-builder-unknown
+    registered_name: Postscript
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Postscript
+    register_name_note: register-name 'postscript' = postscript; no wikidata P856
+    signal_note: 'builder not shown on the listing: direction unknown, kept out of position shares; one edge per
+      (partner, platform)'
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Reactiv
+  app: Reactiv
+  partner: reactiv
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/reactiv-loyalty/
+  category: Loyalty & Referrals
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Reactiv
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Reactiv
+    register_name_note: register-name 'reactiv' = reactiv; no wikidata P856
+    signal_note: one edge per (builder, platform); listings are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Sailthru
+  app: Sailthru
+  partner: sailthru
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://www.yotpo.com/integrations/sailthru/
+  category: Loyalty & Referrals
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-provider-built-app
+    registered_name: Sailthru
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Sailthru
+    register_name_note: register-name 'sailthru' = sailthru; no wikidata P856
+    signal_note: one edge per (builder, platform); listings are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Smile.io
+  app: Smile.io
+  partner: smile-io
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/smile-io/
+  category: Reviews & UGC
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Smile.io
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Smile.io
+    register_name_note: register-name 'smileio' = smile-io; no wikidata P856
+    signal_note: one edge per (builder, platform); listings are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Tapcart
+  app: Tapcart
+  partner: tapcart
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  relationship: platform-app
+  direction: unknown
+  evidence: https://www.yotpo.com/integrations/tapcart-loyalty/
+  category: Loyalty & Referrals
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-listing-builder-unknown
+    registered_name: Tapcart
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Tapcart
+    register_name_note: register-name 'tapcart' = tapcart; no wikidata P856
+    signal_note: 'builder not shown on the listing: direction unknown, kept out of position shares; one edge per
+      (partner, platform)'
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Trend
+  app: Trend
+  partner: trend
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/trend/
+  category: null
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Trend
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Trend
+    register_name_note: register-name 'trend' = trend; no wikidata P856
+    signal_note: one edge per (builder, platform); listings are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Volusion
+  app: Volusion
+  partner: volusion
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/volusion/
+  category: Reviews & UGC
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Volusion
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Volusion
+    register_name_note: register-name 'volusion' = volusion; no wikidata P856
+    signal_note: one edge per (builder, platform); listings are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Yieldify
+  app: Yieldify
+  partner: yieldify
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/yieldify/
+  category: null
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Yieldify
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Yieldify
+    register_name_note: register-name 'yieldify' = yieldify; no wikidata P856
+    signal_note: one edge per (builder, platform); listings are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
+- partner_name: Zinrelo
+  app: Zinrelo
+  partner: zinrelo
+  partner_match: register-name
+  identity_source: register-name
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.yotpo.com/integrations/zinrelo/
+  category: Reviews & UGC
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-app
+    registered_name: Zinrelo
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Zinrelo
+    register_name_note: register-name 'zinrelo' = zinrelo; no wikidata P856
+    signal_note: one edge per (builder, platform); listings are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  detected_by: sweep-reviews-ugc.py
+  detected: '2026-10-20'
 templates:
 - title: Update customer profile properties in Yotpo for new form submissions in Customer Fields
   url: https://zapier.com/apps/customer-fields/integrations/yotpo/1709520/update-customer-profile-properties-in-yotpo-for-new-form-submissions-in-customer-fields
