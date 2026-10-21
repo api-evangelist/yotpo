@@ -217,31 +217,6 @@
     builder: 'community (Meltano Hub variant maintainers: bombas, dbt-labs, flopotok, singer-io, stvhanna)'
   status: not-a-workflow
   arazzo: null
-- slug: yotpo-shopify-own
-  label: Shopify (own)
-  partner: shopify
-  partner_name: Shopify (own)
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://apps.shopify.com/yotpo-social-reviews
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: yotpo-wordpress-own
-  label: WordPress (own)
-  partner: wordpress
-  partner_name: WordPress (own)
-  category: WordPress plugin
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://wordpress.org/plugins/yotpo-social-reviews-for-woocommerce/
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
 - slug: yotpo-cloud-security-alliance-star-registry
   label: Cloud Security Alliance STAR Registry
   partner_name: Cloud Security Alliance STAR Registry
@@ -815,9 +790,10 @@
     identity_source: listing's own Resources link to the developer's docs (loudcrowd.com)
   status: not-a-workflow
   arazzo: null
-- slug: yotpo-none
-  label: None
+- slug: yotpo-omnisend
+  label: Omnisend
   partner: omnisend
+  partner_name: Omnisend
   category: Loyalty & Referrals
   type: marketplace
   marketplace: own
@@ -829,7 +805,7 @@
     register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
     spec_file: null
     role: yotpo-listing-builder-unknown
-    registered_name: null
+    registered_name: Omnisend
     matched_domain: omnisend.com
     matched_by: domain
     listings: 2
@@ -1051,6 +1027,35 @@
     detected_by: sweep-reviews-ugc.py
     detected: '2026-10-20'
     identity_source: listing's own Resources link to the developer's docs (wonderment.com)
+  status: not-a-workflow
+  arazzo: null
+- slug: yotpo-optimizely-zaius
+  label: Optimizely (Zaius)
+  partner: zaius
+  partner_name: Optimizely (Zaius)
+  category: Loyalty & Referrals
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.yotpo.com/integrations/optimizely-loyalty/
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-listing-builder-unknown
+    registered_name: Optimizely (Zaius)
+    matched_domain: optimizely.com
+    matched_by: domain+name-among-holders
+    listings: 2
+    sample_apps:
+    - Optimizely (Zaius)
+    signal_note: 'builder not shown on the listing: direction unknown, kept out of position shares; one edge per
+      (partner, platform)'
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+    identity: 'wikidata P856 (labelled provenance step): wikidata Q17073302 ''Optimizely'' P856 https://www.optimizely.com/'
   status: not-a-workflow
   arazzo: null
 - slug: yotpo-bazaarvoice
@@ -1321,6 +1326,34 @@
     detected: '2026-10-20'
   status: not-a-workflow
   arazzo: null
+- slug: yotpo-gorgias
+  label: Gorgias
+  partner: gorgias
+  partner_name: Gorgias
+  category: Loyalty & Referrals
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.yotpo.com/integrations/gorgias-loyalty/
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-listing-builder-unknown
+    registered_name: Gorgias
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Gorgias
+    register_name_note: register-name 'gorgias' = gorgias; no wikidata P856
+    signal_note: 'builder not shown on the listing: direction unknown, kept out of position shares; one edge per
+      (partner, platform)'
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
 - slug: yotpo-instagram
   label: Instagram
   partner: instagram
@@ -1370,6 +1403,34 @@
     - Judge.me
     register_name_note: register-name 'judgeme' = judge-me; no wikidata P856
     signal_note: one edge per (builder, platform); listings are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
+- slug: yotpo-listrak
+  label: Listrak
+  partner: listrak
+  partner_name: Listrak
+  category: Loyalty & Referrals
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.yotpo.com/integrations/listrak-loyalty/
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-listing-builder-unknown
+    registered_name: Listrak
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Listrak
+    register_name_note: register-name 'listrak' = listrak; no wikidata P856
+    signal_note: 'builder not shown on the listing: direction unknown, kept out of position shares; one edge per
+      (partner, platform)'
     detected_by: sweep-reviews-ugc.py
     detected: '2026-10-20'
   status: not-a-workflow
@@ -1480,6 +1541,34 @@
     detected: '2026-10-20'
   status: not-a-workflow
   arazzo: null
+- slug: yotpo-postscript
+  label: Postscript
+  partner: postscript
+  partner_name: Postscript
+  category: Loyalty & Referrals
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.yotpo.com/integrations/postscript/
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-listing-builder-unknown
+    registered_name: Postscript
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Postscript
+    register_name_note: register-name 'postscript' = postscript; no wikidata P856
+    signal_note: 'builder not shown on the listing: direction unknown, kept out of position shares; one edge per
+      (partner, platform)'
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
 - slug: yotpo-reactiv
   label: Reactiv
   partner: reactiv
@@ -1557,6 +1646,34 @@
     - Smile.io
     register_name_note: register-name 'smileio' = smile-io; no wikidata P856
     signal_note: one edge per (builder, platform); listings are context, never read
+    detected_by: sweep-reviews-ugc.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
+- slug: yotpo-tapcart
+  label: Tapcart
+  partner: tapcart
+  partner_name: Tapcart
+  category: Loyalty & Referrals
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.yotpo.com/integrations/tapcart-loyalty/
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: 'Yotpo integrations directory (yotpo.com/integrations/, listing pages: Developed by)'
+    spec_file: null
+    role: yotpo-listing-builder-unknown
+    registered_name: Tapcart
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Tapcart
+    register_name_note: register-name 'tapcart' = tapcart; no wikidata P856
+    signal_note: 'builder not shown on the listing: direction unknown, kept out of position shares; one edge per
+      (partner, platform)'
     detected_by: sweep-reviews-ugc.py
     detected: '2026-10-20'
   status: not-a-workflow
@@ -1665,5 +1782,56 @@
     signal_note: one edge per (builder, platform); listings are context, never read
     detected_by: sweep-reviews-ugc.py
     detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
+- slug: yotpo-shopify-own
+  label: Shopify (own)
+  partner: shopify
+  partner_name: Shopify (own)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://apps.shopify.com/yotpo-social-reviews
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: yotpo-wordpress-own
+  label: WordPress (own)
+  partner: wordpress
+  partner_name: WordPress (own)
+  category: WordPress plugin
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://wordpress.org/plugins/yotpo-social-reviews-for-woocommerce/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: yotpo-bigcommerce-own
+  label: BigCommerce (own)
+  partner: bigcommerce
+  partner_name: BigCommerce (own)
+  category: Marketing, Loyalty & Customer Referrals
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.bigcommerce.com/apps/yotpo-loyalty-rewards/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: yotpo-salesforce-commerce-cloud-own
+  label: Salesforce Commerce Cloud (own)
+  partner: salesforce-commerce-cloud
+  partner_name: Salesforce Commerce Cloud (own)
+  category: eCommerce, marketing, marketingAutomation
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://appexchange.salesforce.com/appxListingDetail?listingId=4b18c4d2-01a3-4bc5-9cbe-0d7b63e79c42
+  source: edge
+  relationship: platform-app
   status: not-a-workflow
   arazzo: null

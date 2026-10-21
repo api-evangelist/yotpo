@@ -20,6 +20,8 @@ checked:
 - shopify/integrations/shopify-integration-edges.yml
 - wordpress/integrations/wordpress-integration-edges.yml
 - https://www.yotpo.com/integrations/
+- bigcommerce/integrations/bigcommerce-integration-edges.yml
+- salesforce-commerce-cloud/integrations/salesforce-commerce-cloud-integration-edges.yml
 summary: null
 marketplace_apps:
 - marketplace: zapier
@@ -206,41 +208,6 @@ edges:
     builder: 'community (Meltano Hub variant maintainers: bombas, dbt-labs, flopotok, singer-io, stvhanna)'
   detected_by: sweep-data-integration.py
   first_seen: '2026-10-18'
-- partner_name: Shopify (own)
-  partner: shopify
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://apps.shopify.com/yotpo-social-reviews
-  mirror_of: shopify/integrations/shopify-integration-edges.yml
-  apps:
-  - 'Yotpo: Product Reviews App'
-  listing_count: 1
-  detected: '2026-10-15'
-  detected_by: mirror-platform-listings.py
-  publisher_verified:
-  - Built for Shopify
-- partner_name: WordPress (own)
-  partner: wordpress
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://wordpress.org/plugins/yotpo-social-reviews-for-woocommerce/
-  mirror_of: wordpress/integrations/wordpress-integration-edges.yml
-  apps:
-  - Yotpo Product Reviews
-  listing_count: 1
-  detected: '2026-10-19'
-  detected_by: mirror-platform-listings.py
-  category: WordPress plugin
 - partner_name: Cloud Security Alliance STAR Registry
   partner: null
   partner_match: register
@@ -2108,6 +2075,77 @@ edges:
     detected: '2026-10-20'
   detected_by: sweep-reviews-ugc.py
   detected: '2026-10-20'
+- partner_name: Shopify (own)
+  partner: shopify
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://apps.shopify.com/yotpo-social-reviews
+  mirror_of: shopify/integrations/shopify-integration-edges.yml
+  apps:
+  - 'Yotpo: Product Reviews App'
+  listing_count: 1
+  detected: '2026-10-15'
+  detected_by: mirror-platform-listings.py
+  publisher_verified:
+  - Built for Shopify
+- partner_name: WordPress (own)
+  partner: wordpress
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://wordpress.org/plugins/yotpo-social-reviews-for-woocommerce/
+  mirror_of: wordpress/integrations/wordpress-integration-edges.yml
+  apps:
+  - Yotpo Product Reviews
+  listing_count: 1
+  detected: '2026-10-19'
+  detected_by: mirror-platform-listings.py
+  category: WordPress plugin
+- partner_name: BigCommerce (own)
+  partner: bigcommerce
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.bigcommerce.com/apps/yotpo-loyalty-rewards/
+  mirror_of: bigcommerce/integrations/bigcommerce-integration-edges.yml
+  apps:
+  - Yotpo Loyalty and Referrals
+  listing_count: 1
+  detected: '2026-10-20'
+  detected_by: mirror-platform-listings.py
+  category: Marketing, Loyalty & Customer Referrals
+- partner_name: Salesforce Commerce Cloud (own)
+  partner: salesforce-commerce-cloud
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://appexchange.salesforce.com/appxListingDetail?listingId=4b18c4d2-01a3-4bc5-9cbe-0d7b63e79c42
+  mirror_of: salesforce-commerce-cloud/integrations/salesforce-commerce-cloud-integration-edges.yml
+  apps:
+  - Yotpo Reviews, UGC, Loyalty, and Referrals  for B2C Commerce
+  - Yotpo Loyalty for Marketing Cloud
+  - Yotpo Reviews & Visual UGC Headless Integration
+  listing_count: 3
+  detected: '2026-10-20'
+  detected_by: mirror-platform-listings.py
+  category: eCommerce, marketing, marketingAutomation
 templates:
 - title: Update customer profile properties in Yotpo for new form submissions in Customer Fields
   url: https://zapier.com/apps/customer-fields/integrations/yotpo/1709520/update-customer-profile-properties-in-yotpo-for-new-form-submissions-in-customer-fields
